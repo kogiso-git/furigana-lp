@@ -1,0 +1,1527 @@
+/* ============================================================
+   FURIGANA. Landing Page — style.css
+
+   目次
+   ────────────────────────────────────────
+   01. CSS変数  (カラー / フォント / スペーシング)
+   02. リセット & ベース
+   03. タイポグラフィ共通
+   04. レイアウト & スキップリンク
+   05. ヘッダー
+   06. ボタン / CTA
+   07. セクション共通
+   08. Hero
+   09. こんな社長へ (Pain)
+   10. FURIGANA.がすること (What)
+   11. 3つの支援 (Services)
+   12. できるようになること (Outcomes)
+   13. 進め方 (Steps)
+   14. 実績・事例 (Cases)
+   15. 料金目安 (Pricing)
+   16. プロフィール (Profile)
+   17. SNS
+   18. FAQ
+   19. 最終CTA
+   20. フッター
+   21. フェードインアニメーション
+   22. レスポンシブ
+   ────────────────────────────────────────
+
+   カラー設計メモ
+   ────────────────────────────────────────
+   --c-bg       生成り紙色。ページ背景。
+   --c-cream    深みのある紙色。セクション背景の交互使用。
+   --c-card     ほぼ白の紙色。テーブル行・カード背景。
+   --c-charcoal チャコールグレー。ボタン・見出しの主役。
+   --c-stone    ウォームストーン。装飾・区切り線の薄い色。
+   --c-navy     濃紺。ロゴ・プロフィール名など署名の一点使い。
+   --c-dark     最暗部。フッター・最終CTA背景。
+   ────────────────────────────────────────
+   ============================================================ */
+
+
+/* ============================================================
+   01. CSS変数
+   ============================================================ */
+:root {
+  /* カラー ─────────────────────────────── */
+  --c-bg:       #F7F5F0;
+  --c-cream:    #ECE8DE;
+  --c-card:     #FFFDF8;
+  --c-white:    #FFFFFF;
+  --c-ink:      #171C1B;
+  --c-charcoal: #2F3331;
+  --c-stone:    #A7A39A;
+  --c-gray:     #595E5C;
+  --c-border:   #CCC7BC;
+  --c-navy:     #1A2A44;
+  --c-dark:     #222522;
+
+  /* フォント ─────────────────────────────── */
+  --f-en:       'Cormorant Garamond', Georgia, serif;
+  --f-ja-serif: 'Noto Serif JP', 'Yu Mincho', '游明朝', serif;
+  --f-ja-sans:  'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+
+  /* スペーシング ─────────────────────────── */
+  --sp-xs:  8px;
+  --sp-sm:  16px;
+  --sp-md:  24px;
+  --sp-lg:  40px;
+  --sp-xl:  64px;
+  --sp-xxl: 96px;
+
+  /* コンテナ幅 */
+  --w-max: 1100px;
+  --w-pad: 24px;
+
+  /* トランジション */
+  --ease: 0.3s ease;
+}
+
+
+/* ============================================================
+   02. リセット & ベース
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 17px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--f-ja-sans);
+  font-weight: 400;
+  color: var(--c-ink);
+  background: var(--c-bg);
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* 数字をライニング数字に統一: 1がiに見える・3や9が降下する問題を解消 */
+  font-variant-numeric: lining-nums;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  background: none;
+  border: none;
+}
+
+/* フォーカス表示 (アクセシビリティ) */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(26, 42, 68, 0.42);
+  outline-offset: 4px;
+}
+
+
+/* ============================================================
+   03. タイポグラフィ共通
+   ============================================================ */
+
+/* 本文・リスト・コンテンツ要素の基本文字サイズ
+   (個別セクションのルールで上書き可能) */
+p, li,
+.service-body, .step-body, .case-body, .profile-body, .faq-answer p {
+  font-size: clamp(0.96rem, 1.45vw, 1.03rem);
+  line-height: 2.0;
+}
+
+/* 英字編集ラベル (TRANSLATE / FOR YOU 等) */
+.section-label {
+  display: block;
+  font-family: var(--f-en);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  font-style: italic;
+  text-transform: uppercase;
+  color: var(--c-gray);
+  margin-bottom: 14px;
+}
+
+/* セクション見出し */
+.section-heading {
+  font-family: var(--f-ja-serif);
+  font-weight: 400;
+  font-size: clamp(1.65rem, 4.2vw, 2.35rem);
+  line-height: 1.45;
+  color: var(--c-ink);
+  margin-bottom: clamp(32px, 5vw, 56px);
+  letter-spacing: 0.03em;
+}
+
+/* ロゴ英字 */
+.logo-en {
+  font-family: var(--f-en);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.31em;
+  color: var(--c-navy);
+  line-height: 1;
+}
+
+/* ロゴ日本語サブ */
+.logo-ja {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: var(--c-gray);
+  line-height: 1;
+  margin-top: 3px;
+}
+
+
+/* ============================================================
+   04. レイアウト & スキップリンク
+   ============================================================ */
+.container {
+  max-width: var(--w-max);
+  margin: 0 auto;
+  padding: 0 var(--w-pad);
+}
+
+.skip-link {
+  position: absolute;
+  top: -999px;
+  left: 0;
+  padding: 8px 16px;
+  background: var(--c-charcoal);
+  color: var(--c-bg);
+  font-size: 0.8rem;
+  z-index: 9999;
+  border-radius: 0 0 4px 0;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+
+/* ============================================================
+   05. ヘッダー
+   ============================================================ */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  height: 68px;
+  background: rgba(247, 245, 240, 0.97);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(89, 94, 92, 0.2);
+  transition: box-shadow var(--ease);
+}
+
+.site-header .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.4vw, 32px);
+}
+
+.site-nav a {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--c-gray);
+  transition: color var(--ease);
+}
+
+/* 通常ナビリンク: ホバー時に薄い下線 */
+.site-nav a:not(.nav-cta) {
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color var(--ease), border-color var(--ease);
+}
+.site-nav a:not(.nav-cta):hover {
+  color: var(--c-charcoal);
+  border-bottom-color: currentColor;
+}
+
+/* ナビ内CTAボタン: 塗り */
+.site-nav .nav-cta {
+  padding: 8px 18px;
+  border: 1px solid var(--c-charcoal);
+  background: var(--c-charcoal);
+  color: var(--c-bg);
+  border-radius: 2px;
+  font-size: 0.78rem;
+  transition: background var(--ease), border-color var(--ease);
+}
+.site-nav .nav-cta:hover {
+  background: var(--c-dark);
+  border-color: var(--c-dark);
+}
+
+
+/* ============================================================
+   06. ボタン / CTA
+   ============================================================ */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-family: var(--f-ja-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background var(--ease), color var(--ease), border-color var(--ease);
+  line-height: 1.6;
+}
+
+/* チャコールボタン (明るい背景上) */
+.btn-primary {
+  background: var(--c-charcoal);
+  color: var(--c-bg);
+  border: 1px solid var(--c-charcoal);
+}
+.btn-primary:hover {
+  background: var(--c-dark);
+  border-color: var(--c-dark);
+}
+
+/* 紙色ボタン (暗い背景上) */
+.btn-on-dark {
+  background: var(--c-bg);
+  color: var(--c-charcoal);
+  border: 1px solid var(--c-bg);
+}
+.btn-on-dark:hover {
+  background: var(--c-cream);
+  border-color: var(--c-cream);
+}
+
+/* ゴーストボタン (Hero上) */
+.btn-ghost {
+  background: transparent;
+  color: rgba(247, 245, 240, 0.92);
+  border: 1px solid rgba(247, 245, 240, 0.55);
+}
+.btn-ghost:hover {
+  color: var(--c-bg);
+  border-color: rgba(247, 245, 240, 0.80);
+}
+
+/* 大きめボタン */
+.btn-large {
+  padding: 18px 44px;
+  font-size: 0.875rem;
+}
+
+/* CTAブロック (中央寄せ) */
+.cta-block {
+  margin-top: var(--sp-xl);
+  text-align: center;
+}
+
+/* CTA 補足文 */
+.cta-note {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--c-gray);
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+/* ============================================================
+   07. セクション共通
+   ============================================================ */
+.section {
+  padding: clamp(72px, 10vw, 120px) 0;
+  border-top: 1px solid var(--c-border);
+}
+
+/* アンカー移動時に固定ヘッダーで見出しが隠れないよう補正 */
+.section[id] {
+  scroll-margin-top: 72px;
+}
+
+/* 写真プレースホルダー共通 */
+.profile-photo-placeholder {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--c-cream);
+}
+.profile-photo-placeholder::after {
+  content: 'PHOTO';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--f-en);
+  font-size: 0.625rem;
+  letter-spacing: 0.35em;
+  color: var(--c-stone);
+  pointer-events: none;
+}
+
+
+
+/* ============================================================
+   08. Hero
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 68px;
+  background-color: var(--c-charcoal);
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Hero 背景写真の差し替え方法:
+   1. assets/images/hero.jpg を用意する (推奨: 1440×900px 以上)
+   2. 下の background-image のコメントを外してURLを設定する
+   ───────────────────────────────────────────────────────── */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #262826 0%, #343836 50%, #3E403D 100%);
+  /* background-image: url('assets/images/hero.jpg');
+  background-size: cover;
+  background-position: center top; */
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(38, 40, 38, 0.1) 0%,
+    rgba(38, 40, 38, 0.55) 100%
+  );
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+  padding-top: var(--sp-xl);
+  padding-bottom: var(--sp-xl);
+}
+
+.hero-content {
+  max-width: 680px;
+}
+
+/* Hero内のラベル */
+.hero .section-label {
+  color: rgba(247, 245, 240, 0.58);
+  margin-bottom: 12px;
+}
+
+
+.hero-heading {
+  font-family: var(--f-ja-serif);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 6.5vw, 4rem);
+  line-height: 1.35;
+  color: var(--c-bg);
+  margin-bottom: var(--sp-lg);
+  letter-spacing: 0.025em;
+}
+
+/* 改行制御: スマホ・PCともに2行固定 */
+.hero-heading .hero-line {
+  display: block;
+}
+
+.hero-sub {
+  font-size: 0.875rem;
+  line-height: 2;
+  color: rgba(246, 245, 242, 0.76);
+  margin-bottom: var(--sp-lg);
+  letter-spacing: 0.04em;
+}
+
+
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+  align-items: flex-start;
+}
+
+/* Hero上のボタンは紙色反転 */
+.hero .btn-primary {
+  background: var(--c-bg);
+  color: var(--c-ink);
+  border-color: var(--c-bg);
+}
+.hero .btn-primary:hover {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+/* Hero上のCTA補足文 */
+.hero-cta-note {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: rgba(246, 245, 242, 0.42);
+  margin-top: 10px;
+  text-align: left;
+}
+
+
+/* ============================================================
+   09. こんな社長へ (Pain)
+   ============================================================ */
+.section-pain {
+  background: var(--c-bg);
+  border-top: none;  /* Heroとの境界線は非表示 */
+}
+
+.pain-list {
+  display: block;
+  margin-bottom: var(--sp-xl);
+}
+
+.pain-list li {
+  position: relative;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  padding: var(--sp-sm) 0 var(--sp-sm) var(--sp-md);
+  border-bottom: 1px solid var(--c-border);
+  letter-spacing: 0.03em;
+}
+.pain-list li:first-child {
+  border-top: 1px solid var(--c-border);
+}
+.pain-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--c-charcoal);
+}
+
+
+/* チャコール背景の解決ブロック */
+.pain-resolve {
+  background: var(--c-charcoal);
+  color: var(--c-bg);
+  padding: clamp(32px, 6vw, 58px);
+  border-radius: 2px;
+}
+.pain-resolve p {
+  font-family: var(--f-ja-serif);
+  font-size: clamp(1.08rem, 2.7vw, 1.34rem);
+  line-height: 2.05;
+  letter-spacing: 0.05em;
+}
+
+
+/* ============================================================
+   10. FURIGANA.がすること (What)
+   ============================================================ */
+.section-what {
+  background: var(--c-cream);
+}
+
+.what-intro {
+  font-size: 0.9rem;
+  line-height: 2;
+  margin-bottom: var(--sp-lg);
+  letter-spacing: 0.03em;
+  color: var(--c-ink);
+}
+
+/* 左罫線ブロック */
+.what-flow {
+  font-family: var(--f-ja-serif);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 2.4;
+  color: var(--c-charcoal);
+  padding: clamp(24px, 4vw, 36px);
+  border-left: 3px solid var(--c-charcoal);
+  margin-bottom: var(--sp-lg);
+  letter-spacing: 0.03em;
+  background: transparent;
+  border-radius: 0;
+}
+
+.what-goal {
+  font-family: var(--f-ja-serif);
+  font-size: clamp(1.08rem, 2.4vw, 1.28rem);
+  line-height: 2;
+  color: var(--c-charcoal);
+  letter-spacing: 0.05em;
+}
+
+
+/* ============================================================
+   11. 3つの支援 (Services)
+   ============================================================ */
+.section-services {
+  background: var(--c-bg);
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+/* 横罫線と余白で見せるエディトリアル型 */
+.service-card {
+  border-top: 1px solid var(--c-border);
+  padding: var(--sp-xl) 0;
+  background: transparent;
+  border-radius: 0;
+}
+.service-card:hover {
+  transform: none;
+}
+
+.service-card-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-sm);
+  margin-bottom: var(--sp-xs);
+}
+
+.service-name-en {
+  display: block;
+  font-family: var(--f-en);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  color: var(--c-gray);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.service-title {
+  font-family: var(--f-ja-serif);
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  font-weight: 400;
+  color: var(--c-charcoal);
+  margin-bottom: var(--sp-xs);
+  line-height: 1.3;
+}
+
+.service-subtitle {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--c-gray);
+  letter-spacing: 0.08em;
+  padding-bottom: var(--sp-md);
+  border-bottom: 1px solid var(--c-border);
+  margin-bottom: var(--sp-md);
+}
+
+/* ─────────────────────────────────────────────────────────
+   サービス写真エリア
+   画像が未設定のときはクリーム色プレースホルダーを表示。
+   差し替え方法: HTML の .service-fig div 内の img src を変更。
+     assets/images/services/listen.jpg
+     assets/images/services/structure.jpg
+     assets/images/services/accompany.jpg
+   ───────────────────────────────────────────────────────── */
+.service-fig {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin-bottom: var(--sp-md);
+  background: var(--c-cream);
+  position: relative;
+  overflow: hidden;
+}
+
+/* プレースホルダーラベル（画像が入ったら ::after を不要化） */
+.service-fig::after {
+  content: 'Photo';
+  position: absolute;
+  bottom: 14px;
+  right: 16px;
+  font-family: var(--f-en);
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  color: var(--c-border);
+  font-style: italic;
+}
+
+/* 実画像が入った場合 */
+.service-fig img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.service-fig:has(img)::after {
+  display: none;
+}
+
+.service-body {
+  line-height: 2;
+  color: var(--c-ink);
+  margin-bottom: var(--sp-sm);
+  letter-spacing: 0.03em;
+}
+
+.service-note {
+  color: var(--c-gray);
+  font-style: italic;
+  padding: 0;
+  background: transparent;
+}
+
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: var(--sp-md);
+  padding-top: var(--sp-md);
+  border-top: 1px solid var(--c-border);
+}
+.service-tags li {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--c-stone);
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.service-tags li::after {
+  content: '\00a0／\00a0';
+  color: var(--c-border);
+}
+.service-tags li:last-child::after {
+  content: '';
+}
+
+
+/* ============================================================
+   12. できるようになること (Outcomes)
+   ============================================================ */
+.section-outcomes {
+  background: var(--c-cream);
+}
+
+.section-outcomes .section-label {
+  color: var(--c-gray);
+}
+
+.outcome-list {
+  margin-bottom: var(--sp-xl);
+}
+
+.outcome-list li {
+  position: relative;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  padding: 16px 0 16px var(--sp-md);
+  border-bottom: 1px solid var(--c-border);
+  letter-spacing: 0.03em;
+  color: var(--c-ink);
+}
+.outcome-list li:first-child {
+  border-top: 1px solid var(--c-border);
+}
+.outcome-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 1px;
+  background: var(--c-stone);
+}
+
+.outcome-note {
+  font-family: var(--f-ja-serif);
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  line-height: 2;
+  color: var(--c-ink);
+  letter-spacing: 0.05em;
+}
+
+
+/* ============================================================
+   13. 進め方 (How It Works — 3サービス別構成)
+   ============================================================ */
+.section-steps {
+  background: var(--c-bg);
+}
+
+.steps-lead {
+  font-family: var(--f-ja-serif);
+  font-size: clamp(0.875rem, 1.3vw, 1rem);
+  line-height: 2;
+  color: var(--c-gray);
+  letter-spacing: 0.06em;
+  margin-bottom: var(--sp-xl);
+}
+
+/* ── サービス別ブロック（左：名前エリア / 右：ステップグリッド） ── */
+.how-block {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0 var(--sp-xl);
+  align-items: start;
+  padding: var(--sp-xl) 0;
+  border-top: 1px solid var(--c-border);
+}
+.how-block:last-of-type {
+  border-bottom: 1px solid var(--c-border);
+}
+
+/* 左列：サービス名・目的エリア */
+.how-block-label {
+  display: block;
+  font-family: var(--f-en);
+  font-size: clamp(0.8rem, 1.05vw, 0.84rem);
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  font-style: italic;
+  text-transform: uppercase;
+  color: var(--c-gray);
+  margin-bottom: 10px;
+}
+
+.how-block-title {
+  font-family: var(--f-ja-serif);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 3.2vw, 2.2rem);
+  color: var(--c-charcoal);
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--sp-sm);
+}
+
+.how-block-purpose {
+  font-family: var(--f-ja-serif);
+  font-size: 0.825rem;
+  line-height: 1.9;
+  color: var(--c-gray);
+  letter-spacing: 0.04em;
+}
+
+/* 右列：2×2 ステップグリッド */
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-lg);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.how-step {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: var(--sp-sm);
+  border-top: 1px solid var(--c-border);
+}
+
+.how-step-num {
+  display: block;
+  font-family: var(--f-en);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--c-stone);
+  line-height: 1;
+}
+
+.how-step-title {
+  font-family: var(--f-ja-serif);
+  font-size: 0.975rem;
+  font-weight: 400;
+  color: var(--c-ink);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.how-step-body {
+  font-size: 0.825rem;
+  line-height: 1.85;
+  color: var(--c-gray);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+
+/* ============================================================
+   14. 実績・事例 (Cases)
+   ============================================================ */
+.section-cases {
+  background: var(--c-cream);
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.case-item {
+  padding: var(--sp-xl) 0;
+  border-top: 1px solid var(--c-border);
+  background: transparent;
+  border-radius: 0;
+}
+.case-item:hover {
+  transform: none;
+}
+
+.case-title {
+  font-family: var(--f-ja-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--c-ink);
+  margin-bottom: var(--sp-sm);
+  line-height: 1.55;
+}
+
+.case-body {
+  line-height: 2;
+  color: var(--c-ink);
+  letter-spacing: 0.03em;
+}
+
+
+/* ============================================================
+   15. 料金目安 (Pricing)
+   ============================================================ */
+.section-pricing {
+  background: var(--c-bg);
+}
+
+.pricing-lead {
+  font-size: 0.875rem;
+  line-height: 2;
+  color: var(--c-ink);
+  margin-bottom: var(--sp-xl);
+  letter-spacing: 0.03em;
+}
+
+.pricing-table {
+  border: 1px solid var(--c-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.pricing-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: clamp(24px, 4vw, 36px);
+  background: var(--c-card);
+  border-bottom: 1px solid var(--c-border);
+  transition: background var(--ease);
+}
+.pricing-row:last-child {
+  border-bottom: none;
+}
+.pricing-row:hover {
+  background: var(--c-cream);
+}
+
+/* 無料行はやや深い紙色 */
+.pricing-row--free {
+  background: var(--c-cream);
+}
+.pricing-row--free:hover {
+  background: #E4E1DA;
+}
+
+.pricing-name {
+  font-family: var(--f-ja-serif);
+  font-size: 1.08rem;
+  font-weight: 400;
+  color: var(--c-ink);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-xs);
+  line-height: 1.5;
+}
+
+/* 無料バッジ */
+.pricing-badge {
+  display: inline-block;
+  font-family: var(--f-ja-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--c-bg);
+  background: var(--c-charcoal);
+  padding: 4px 11px;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+.pricing-detail {
+  font-size: 0.9rem;
+  color: var(--c-gray);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+.pricing-price {
+  font-family: var(--f-en);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--c-charcoal);
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.pricing-unit {
+  font-size: 0.75rem;
+  color: var(--c-gray);
+}
+
+
+/* ============================================================
+   16. プロフィール (Profile)
+   ============================================================ */
+.section-profile {
+  background: var(--c-bg);
+}
+
+.profile-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-xl);
+}
+
+.profile-photo-wrap {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* ─────────────────────────────────────────────────────────
+   プロフィール写真の差し替え方法:
+   assets/images/profile/profile-shuya-kogiso.jpg を差し替え
+   ───────────────────────────────────────────────────────── */
+.profile-photo-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+}
+
+.profile-photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.profile-photo-placeholder:has(img)::after {
+  display: none;
+}
+
+.profile-role {
+  font-family: var(--f-ja-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--c-charcoal);
+  margin-bottom: var(--sp-xs);
+}
+
+/* プロフィール名: ネイビーで署名感を出す */
+.profile-name-ja {
+  font-family: var(--f-ja-serif);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--c-navy);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.profile-name-en {
+  font-family: var(--f-en);
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  color: var(--c-gray);
+  margin-bottom: var(--sp-lg);
+}
+
+.profile-body {
+  line-height: 2;
+  color: var(--c-ink);
+  margin-bottom: var(--sp-md);
+  letter-spacing: 0.03em;
+}
+
+/* 実績キーワード (横罫線区切りのテキストタグ) */
+.profile-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-sm) var(--sp-lg);
+  margin-bottom: var(--sp-lg);
+  padding: var(--sp-md) 0;
+  border-top: 1px solid var(--c-border);
+  border-bottom: 1px solid var(--c-border);
+}
+.profile-proof span {
+  font-family: var(--f-en);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--c-stone);
+  text-transform: uppercase;
+}
+
+/* 引用ブロック: 左罫線はネイビー (署名色) */
+.profile-quote {
+  margin-top: var(--sp-xl);
+  padding: var(--sp-lg);
+  border-left: 2px solid var(--c-navy);
+  background: transparent;
+  border-radius: 0;
+}
+.profile-quote p {
+  font-family: var(--f-ja-serif);
+  font-size: clamp(0.98rem, 1.5vw, 1.06rem);
+  line-height: 2.2;
+  color: var(--c-ink);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--sp-sm);
+}
+.profile-quote p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ============================================================
+   17. SNS
+   ============================================================ */
+.section-sns {
+  background: var(--c-bg);
+  padding: var(--sp-xl) 0;
+}
+
+/* SNS見出しは本文セクションより控えめに */
+.section-sns .section-heading {
+  font-family: var(--f-en);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  color: var(--c-gray);
+  text-transform: uppercase;
+  margin-bottom: var(--sp-sm);
+}
+
+.sns-lead {
+  font-size: 0.85rem;
+  line-height: 1.95;
+  color: var(--c-ink);
+  letter-spacing: 0.04em;
+  margin-bottom: var(--sp-lg);
+}
+
+.sns-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sns-links a {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--f-en);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  color: var(--c-gray);
+  padding: 8px 22px;
+  border: 1px solid var(--c-border);
+  border-radius: 50px;
+  background: transparent;
+  transition: color var(--ease), border-color var(--ease);
+}
+.sns-links a:hover {
+  color: var(--c-charcoal);
+  border-color: var(--c-charcoal);
+}
+
+
+/* ============================================================
+   18. FAQ
+   ============================================================ */
+.section-faq {
+  background: var(--c-cream);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* 横罫線リスト */
+.faq-item {
+  border-bottom: 1px solid var(--c-border);
+  background: transparent;
+  border-radius: 0;
+}
+.faq-item:first-child {
+  border-top: 1px solid var(--c-border);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-md);
+  padding: var(--sp-md) 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--c-ink);
+  text-align: left;
+  line-height: 1.65;
+  letter-spacing: 0.03em;
+  transition: color var(--ease);
+}
+.faq-question:hover {
+  color: var(--c-charcoal);
+}
+
+/* + / × アイコン */
+.faq-icon {
+  flex-shrink: 0;
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  background: var(--c-gray);
+  transition: var(--ease);
+}
+.faq-icon::before {
+  width: 12px; height: 1px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.faq-icon::after {
+  width: 1px; height: 12px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.faq-question[aria-expanded="true"] .faq-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  opacity: 0;
+}
+
+.faq-answer {
+  padding: 0 0 var(--sp-md);
+}
+.faq-answer[hidden] {
+  display: none;
+}
+.faq-answer p {
+  font-size: 0.85rem;
+  line-height: 2;
+  color: var(--c-ink);
+  letter-spacing: 0.03em;
+}
+
+
+/* ============================================================
+   19. 最終CTA
+   ============================================================ */
+.section-final-cta {
+  background: var(--c-dark);
+  color: var(--c-bg);
+  text-align: center;
+  padding-bottom: calc(var(--sp-xxl) + 16px);
+}
+
+.section-final-cta .section-label {
+  color: rgba(247, 245, 240, 0.62);
+  margin-bottom: var(--sp-md);
+}
+
+.final-cta-heading {
+  font-family: var(--f-ja-serif);
+  font-weight: 400;
+  font-size: clamp(1.65rem, 5.5vw, 2.6rem);
+  line-height: 1.55;
+  color: var(--c-bg);
+  margin-bottom: var(--sp-lg);
+  letter-spacing: 0.04em;
+}
+
+.final-cta-body {
+  font-size: 0.875rem;
+  line-height: 2;
+  color: rgba(247, 245, 240, 0.86);
+  margin-bottom: var(--sp-xl);
+  letter-spacing: 0.04em;
+}
+
+.final-cta-note {
+  margin-top: var(--sp-md);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: rgba(246, 245, 242, 0.52);
+}
+
+
+/* ============================================================
+   20. フッター
+   ============================================================ */
+.site-footer {
+  background: var(--c-dark);
+  padding: var(--sp-xl) 0;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-md);
+  text-align: center;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-logo {
+  color: rgba(246, 245, 242, 0.72);
+  letter-spacing: 0.32em;
+  font-size: 1.15rem;
+}
+
+.footer-tagline {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: rgba(246, 245, 242, 0.3);
+}
+
+.footer-sns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.footer-sns a {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--f-en);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  color: rgba(246, 245, 242, 0.45);
+  padding: 8px 22px;
+  border: 1px solid rgba(246, 245, 242, 0.18);
+  border-radius: 50px;
+  background: transparent;
+  transition: color var(--ease), border-color var(--ease);
+}
+.footer-sns a:hover {
+  color: rgba(246, 245, 242, 0.75);
+  border-color: rgba(246, 245, 242, 0.45);
+}
+
+.footer-copy {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: rgba(246, 245, 242, 0.35);
+}
+
+
+/* ============================================================
+   21. フェードインアニメーション
+       JS (.is-visible クラス付与) と連動
+   ============================================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero内要素は最初から表示 */
+.hero .fade-in {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* ============================================================
+   22. レスポンシブ
+   ============================================================ */
+
+/* ── モバイル (〜767px) ──────────────────────────────────── */
+@media (max-width: 767px) {
+  :root {
+    --w-pad: 22px;
+    --sp-xxl: 76px;
+  }
+
+  html { font-size: 16px; }
+
+  /* ヘッダー: スマホは「無料相談」のみ表示 */
+  .site-header { height: 64px; }
+  .logo-en { font-size: 1rem; letter-spacing: 0.23em; }
+  .logo-ja { font-size: 0.58rem; }
+  .site-nav a:not(.nav-cta) { display: none; }
+  .site-nav .nav-cta { padding: 8px 16px; font-size: 0.75rem; }
+
+  /* Hero */
+  .hero { min-height: auto; padding-top: 64px; }
+  .hero .container { padding-top: 64px; padding-bottom: 58px; }
+  /* 9.5vw: 375px×9.5vw=35.6px → 8文字×35.6px=285px → コンテナ331px内に収まる */
+  .hero-heading { font-size: clamp(2.1rem, 9.5vw, 3.2rem); line-height: 1.3; }
+  .hero-sub { font-size: 1rem; line-height: 1.95; }
+  .hero-sub br { display: none; }
+  .hero-cta { align-items: flex-start; }
+  .hero-cta-note { text-align: left; }
+
+  /* Hero ghost: スマホでテキストリンク化（LP感を抑える） */
+  .hero-cta .btn-ghost {
+    width: auto;
+    border: none;
+    padding: 4px 0;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    color: rgba(247, 245, 240, 0.72);
+    background: transparent;
+  }
+
+  /* ボタン: 全幅（ghost は上記で上書き） */
+  .btn { width: 100%; padding-left: 18px; padding-right: 18px; }
+
+  /* セクション見出し: 6.5vw → 375px×6.5vw=24.4px → 12文字が1行に収まる */
+  .section-heading { font-size: clamp(1.45rem, 6.5vw, 2.05rem); }
+
+  /* Pain */
+  .pain-list li { padding-right: 16px; }
+
+  /* サービス写真: スマホでは高さを抑制 */
+  .service-fig { aspect-ratio: 16 / 10; max-height: 220px; }
+
+  /* HOW IT WORKS: モバイルで縦1列 */
+  .how-block { grid-template-columns: 1fr; gap: var(--sp-lg); }
+  .how-steps  { grid-template-columns: 1fr; }
+
+  /* Pricing */
+  .pricing-row { gap: 10px; }
+
+  /* Profile */
+  .profile-photo-wrap { max-width: 240px; }
+
+  /* SNS / Footer SNS: 2列グリッド */
+  .sns-links a,
+  .footer-sns a { flex: 1 1 calc(50% - 10px); justify-content: center; }
+}
+
+/* ── 極小画面 (〜390px) ── */
+@media (max-width: 390px) {
+  .hero-heading { font-size: 2rem; }
+  .section { padding: 64px 0; }
+}
+
+/* ── タブレット以上 (768px〜) ──────────────────────────── */
+@media (min-width: 768px) {
+  :root { --w-pad: 40px; }
+
+  /* Hero CTA: 横並び */
+  .hero-cta { flex-direction: row; align-items: center; gap: 14px; }
+
+  /* Services: 3列 */
+  .service-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 var(--sp-xl);
+    align-items: start;
+  }
+
+  /* Cases: 2列 */
+  .case-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 var(--sp-xl);
+  }
+
+  /* Pricing: 横並び */
+  .pricing-row { flex-direction: row; align-items: center; gap: var(--sp-md); }
+  .pricing-name  { flex: 0 0 180px; }
+  .pricing-detail { flex: 1; }
+  .pricing-price  { flex: 0 0 160px; text-align: right; }
+
+  /* HOW IT WORKS: タブレットで左列を少し縮める */
+  .how-block { grid-template-columns: 160px 1fr; }
+
+  /* Profile: 写真+テキスト横並び */
+  .profile-inner {
+    grid-template-columns: 320px 1fr;
+    align-items: start;
+    gap: 72px;
+  }
+  .profile-photo-wrap { margin: 0; }
+}
+
+/* ── デスクトップ (1024px〜) ──────────────────────────── */
+@media (min-width: 1024px) {
+  :root { --w-pad: 48px; }
+
+  .hero-heading { font-size: 4rem; }
+  .hero-content { max-width: 680px; }
+
+  .service-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .service-card { padding: var(--sp-xl) 0; }
+
+  /* HOW IT WORKS: 左列を少し広く */
+  .how-block { grid-template-columns: 220px 1fr; }
+}

@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- =====================================================
+       SEO: title と description はここで編集してください
+       ===================================================== -->
+  <title>FURIGANA. | 社長の翻訳者 ― 社長の当たり前に、ふりがなを振る。</title>
+  <meta name="description" content="FURIGANA.は、社長の頭の中にある判断基準を引き出し、会社で使える仕組みと、社長自身が使えるAI活用に整える個別伴走サービスです。アパレル・飲食・美容室などサービス業の経営者に伴走します。">
+
+  <!-- =====================================================
+       OGP: SNS・LINE でシェアされたときの表示設定
+       og:url と og:image は実際のURLと画像パスに差し替えてください
+       ===================================================== -->
+  <meta property="og:title" content="FURIGANA. | 社長の翻訳者">
+  <meta property="og:description" content="社長の当たり前に、ふりがなを振る。判断基準を言葉・仕組み・AIに変える個別伴走サービス。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com"><!-- ← 公開URLに差し替え -->
+  <meta property="og:image" content="assets/images/ogp.jpg"><!-- ← OGP画像(1200×630px)を差し替え -->
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts (明朝・ゴシック・英字セリフ) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- アクセシビリティ: キーボード操作でコンテンツへスキップ -->
+  <a href="#main-content" class="skip-link">本文へスキップ</a>
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+  <header class="site-header" id="top" role="banner">
+    <div class="container">
+      <a href="#top" class="site-logo" aria-label="FURIGANA. トップへ戻る">
+        <span class="logo-en">FURIGANA.</span>
+        <span class="logo-ja">社長の翻訳者</span>
+      </a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <a href="#services">支援内容</a>
+        <a href="#profile">プロフィール</a>
+        <a href="#sns">SNS</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdK8Rc7PLtsVVw5PoGttToSYU9QsRuxLGdsSi49VNPGnMpAPA/viewform" class="nav-cta" target="_blank" rel="noopener noreferrer">無料相談</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- =====================================================
+         01 / HERO ― ファーストビュー
+         ===================================================== -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+
+      <!-- 背景写真プレースホルダー
+           差し替え方法: assets/images/hero.jpg を用意し、
+           style.css の .hero-bg { background-image: url('assets/images/hero.jpg'); } を追記 -->
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-bg-overlay"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-content">
+          <p class="section-label">Translate</p>
+          <h1 class="hero-heading" id="hero-heading">
+            <span class="hero-line">社長の当たり前に、</span>
+            <span class="hero-line">ふりがなを振る。</span>
+          </h1>
+          <p class="hero-sub">
+            社長の頭の中にある判断基準を、<br>
+            言葉にし、仕組みにし、AIも使える形へ整える。
+          </p>
+
+          <!-- CTA ① (Hero) ===================================================
+               Google フォームURL はここの href="YOUR_GOOGLE_FORM_URL" を差し替え
+               ================================================================= -->
+          <div class="hero-cta">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdK8Rc7PLtsVVw5PoGttToSYU9QsRuxLGdsSi49VNPGnMpAPA/viewform"
+               class="btn btn-primary"
+               target="_blank"
+               rel="noopener noreferrer"
+               id="cta-hero">
+              無料相談をはじめる
+            </a>
+            <a href="#services" class="btn btn-ghost">サービスを見る →</a>
+          </div>
+          <p class="cta-note hero-cta-note">初回60分 / 完全無料</p>
+        </div>
+      </div>
+    </section><!-- /hero -->
+
+
+    <!-- =====================================================
+         02 / FOR YOU ― こんな社長へ
+         ===================================================== -->
+    <section class="section section-pain" id="pain" aria-labelledby="pain-heading">
+      <div class="container">
+        <span class="section-label">For You</span>
+        <h2 class="section-heading" id="pain-heading">
+          こんなこと、ありませんか。
+        </h2>
+
+        <ul class="pain-list" role="list">
+          <li>毎回、自分が説明しないと現場が動かない</li>
+          <li>店長やスタッフに任せたいのに、判断がズレる</li>
+          <li>自分が一番できるから、結局いつも自分でやってしまう</li>
+          <li>マニュアルを作りたいが、何を言葉にすればいいかわからない</li>
+          <li>AIを使った方がいいとはわかっている。ただ、何から手をつければいいかわからない</li>
+          <li>採用ページ、発信、資料、マニュアルを外注するたびに説明が大変</li>
+          <li>頭の中にある基準を、どう言葉にすればいいかわからない</li>
+        </ul>
+
+        <div class="pain-resolve">
+          <p>
+            その原因は、社長の能力不足ではありません。<br>
+            社長の中にある判断基準が、<br>
+            まだ会社で使える形になっていないだけです。
+          </p>
+        </div>
+
+      </div>
+    </section><!-- /pain -->
+
+
+    <!-- =====================================================
+         03 / WHAT WE DO ― FURIGANA.がすること
+         ===================================================== -->
+    <section class="section section-what" id="what" aria-labelledby="what-heading">
+      <div class="container">
+        <span class="section-label">Role</span>
+        <h2 class="section-heading" id="what-heading">FURIGANA.がすること</h2>
+
+        <div class="what-body">
+          <p class="what-intro">
+            FURIGANA.がすることは、社長の仕事を代行することではありません。
+          </p>
+          <p class="what-flow">
+            社長の考えを聴き、<br>
+            判断基準を棚卸しし、<br>
+            会社で使える言葉と仕組みに整え、<br>
+            必要に応じてAIやデジタルツールへ落とし込みます。
+          </p>
+          <p class="what-goal">
+            目指すのは、<br>社長が自分の手で仕事を前に進められる状態です。
+          </p>
+        </div>
+      </div>
+    </section><!-- /what -->
+
+
+    <!-- =====================================================
+         04 / THREE PILLARS ― 3つの支援
+         ===================================================== -->
+    <section class="section section-services" id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <span class="section-label">Support</span>
+        <h2 class="section-heading" id="services-heading">FURIGANA.の3つの支援</h2>
+
+        <div class="service-cards">
+
+          <!-- ▼ 01 聴く -->
+          <article class="service-card">
+            <div class="service-card-header">
+              <span class="service-name-en">LISTEN</span>
+            </div>
+            <h3 class="service-title">聴く</h3>
+            <p class="service-subtitle">社長の判断基準を引き出す</p>
+
+            <!-- 聴く：assets/images/services/listen.jpg を差し替え -->
+            <div class="service-fig">
+              <img src="assets/images/services/listen.jpg"
+                   alt="社長の判断基準を聞き出すインタビューと記録のイメージ"
+                   loading="lazy">
+            </div>
+
+            <p class="service-body">
+              90分前後のインタビューや、現場への密着を通じて、社長が普段どこを見て、
+              何を優先し、どんな基準で判断しているのかを引き出します。
+            </p>
+            <p class="service-body">
+              半生、現場での動き、スタッフへの声かけまで。
+              社長にとっては当たり前すぎて言葉になっていないものを、丁寧に拾い上げます。
+            </p>
+            <ul class="service-tags" role="list">
+              <li>インタビュー</li>
+              <li>密着撮影</li>
+              <li>価値観整理</li>
+              <li>判断基準の言語化</li>
+            </ul>
+          </article>
+
+          <!-- ▼ 02 組む -->
+          <article class="service-card">
+            <div class="service-card-header">
+              <span class="service-name-en">STRUCTURE</span>
+            </div>
+            <h3 class="service-title">組む</h3>
+            <p class="service-subtitle">社長の判断を、会社の資産にする</p>
+
+            <!-- 組む：assets/images/services/structure.jpg を差し替え -->
+            <div class="service-fig">
+              <img src="assets/images/services/structure.jpg"
+                   alt="判断基準を業務フローや仕組みに整理するイメージ"
+                   loading="lazy">
+            </div>
+
+            <p class="service-body">
+              毎週、判断や現場での意思決定を棚卸しします。「なぜそう決めたのか」「何を優先したのか」「どこで線を引いたのか」——ひとりでは忙しすぎて振り返れない判断を、週に一度、一緒に言語化していきます。
+            </p>
+            <p class="service-body">
+              週を重ねるごとに、社長のOK/NGや任せる基準が可視化され、マニュアル・チェックリスト・業務フロー・専用AIチャットへと育っていきます。積み重ねるほど、会社の判断資産が増えていく仕組みです。
+            </p>
+            <ul class="service-tags" role="list">
+              <li>判断の棚卸し</li>
+              <li>マニュアル化</li>
+              <li>業務フロー整理</li>
+              <li>AIチャット設計</li>
+            </ul>
+          </article>
+
+          <!-- ▼ 03 伴う -->
+          <article class="service-card">
+            <div class="service-card-header">
+              <span class="service-name-en">ACCOMPANY</span>
+            </div>
+            <h3 class="service-title">伴う</h3>
+            <p class="service-subtitle">社長の手で、仕事を動かせるように</p>
+
+            <!-- 伴う：assets/images/services/accompany.jpg を差し替え -->
+            <div class="service-fig">
+              <img src="assets/images/services/accompany.jpg"
+                   alt="社長自身が実務でAIやデジタルツールを使う伴走のイメージ"
+                   loading="lazy">
+            </div>
+
+            <p class="service-body">
+              週90分を目安に、社長自身がAIやデジタルツールを使いながら、
+              実際の仕事を前に進める時間をつくります。
+            </p>
+            <p class="service-body">
+              ホームページや採用ページをつくる。マニュアルを整える。発信の初稿を書く。指示書を短時間で出す。繰り返しの業務を仕組みで時短する。自分専用のAIチャットを育てる。
+            </p>
+            <p class="service-body service-note">
+              こちらが一方的に作って渡すことが、目的ではありません。
+              社長自身が仕事を動かせるように、実際の業務を題材にしながら伴走します。
+            </p>
+            <ul class="service-tags" role="list">
+              <li>AI活用</li>
+              <li>資料づくり</li>
+              <li>仕組み化</li>
+              <li>社長専用チャット</li>
+            </ul>
+          </article>
+
+        </div><!-- /service-cards -->
+      </div>
+    </section><!-- /services -->
+
+
+    <!-- =====================================================
+         05 / OUTCOMES ― 半年後・1年後にできること
+         ===================================================== -->
+    <section class="section section-outcomes" id="outcomes" aria-labelledby="outcomes-heading">
+      <div class="container">
+        <span class="section-label">Change</span>
+        <h2 class="section-heading" id="outcomes-heading">
+          半年後、社長の仕事はこう変わります。
+        </h2>
+
+        <ul class="outcome-list" role="list">
+          <li>自社のホームページを自分で作れる</li>
+          <li>スタッフ向けマニュアルを自分で整えられる</li>
+          <li>SNS投稿やブログの初稿を自分で作れる</li>
+          <li>外注先への指示書を短時間で作れる</li>
+          <li>店長に任せるための判断基準を言葉にできる</li>
+          <li>週次の振り返りから、業務改善案を出せる</li>
+          <li>自分専用のAIチャットを仕事に使える</li>
+          <li>説明、確認、手戻りの時間を減らせる</li>
+        </ul>
+
+        <p class="outcome-note">
+          目指すのは、"AIを使える社長"ではありません。<br>
+          自分の判断をもとに、仕事を早く、深く、前に進められる社長です。
+        </p>
+
+
+      </div>
+    </section><!-- /outcomes -->
+
+
+    <!-- =====================================================
+         06 / HOW IT WORKS ― 進め方
+         ===================================================== -->
+    <section class="section section-steps" id="steps" aria-labelledby="steps-heading">
+      <div class="container">
+        <span class="section-label">Process</span>
+        <h2 class="section-heading" id="steps-heading">進め方</h2>
+
+        <p class="steps-lead">
+          支援の内容によって、進め方は異なります。<br>
+          まず聴き、必要に応じて組み、社長自身が動かせるよう伴います。
+        </p>
+
+        <!-- ▼ 01 LISTEN / 聴く -->
+        <div class="how-block">
+          <div class="how-block-meta">
+            <span class="how-block-label">LISTEN</span>
+            <h3 class="how-block-title">聴く</h3>
+            <p class="how-block-purpose">社長の判断基準を引き出し、仕組み化の土台にする。</p>
+          </div>
+          <ol class="how-steps">
+            <li class="how-step">
+              <span class="how-step-num">01</span>
+              <div class="how-step-content">
+                <h4 class="how-step-title">インタビュー</h4>
+                <p class="how-step-body">社長の半生、価値観、現場での判断を聞き取ります。</p>
+              </div>
+            </li>
+            <li class="how-step">
+              <span class="how-step-num">02</span>
+              <div class="how-step-content">
+                <h4 class="how-step-title">密着・記録</h4>
+                <p class="how-step-body">必要に応じて現場に入り、動きや声かけ、判断の場面を記録します。</p>
+              </div>
+            </li>
+            <li class="how-step">
+              <span class="how-step-num">03</span>
+              <div class="how-step-content">
+                <h4 class="how-step-title">読み解き</h4>
+                <p class="how-step-body">文字起こしや記録をもとに、価値観・優先順位・判断基準を整理します。</p>
+              </div>
+            </li>
+            <li class="how-step">
+              <span class="how-step-num">04</span>
+              <div class="how-step-content">
+                <h4 class="how-step-title">確認・納品</h4>
+                <p class="how-step-body">社長と確認しながら、今後の仕組み化の土台となる判断基準リストに整えます。</p>
+              </div>
+            </li>
+          </ol>
+        </div><!-- /how-block LISTEN -->
+
+        <!-- ▼ 02 STRUCTURE / 組む -->
+        <div class="how-block">
+          <div class="how-block-meta">
+            <span class="how-block-label">STRUCTURE</span>
+            <h3 class="how-block-title">組む</h3>
+            <p class="how-block-purpose">週ごとの判断を棚卸しし、会社で使える資産に変える。</p>
+          </div>
+          <ol class="how-steps">
+            <li class="how-step">
+              <span class="how-step-num">01</span>
+              <div class="how-step-content">
+                <h4 class="how-step-title">週次の棚卸し</h4>
+                <p class="how-step-body">この1週間で社長が行った判断や意思決定を振り返ります。</p>
+              </div>
+            </li>
+            <li class="how-step">
+              <span class="how-step-num">02</span>
+              <div class="how-step-content">
+                <h4 class="how-step-title">判断の言語化</h4>
+                <p class="how-step-body">なぜ決めたのか、何を優先したのか、どこで線を引いたのかを整理します。</p>
+              </div>
+            </li>
+            <li class="how-step">
+              <span class="how-step-num">03</span>
+              <div class="how-step-content">
+                <h4 class="how-step-title">基準化</h4>
+                <p class="how-step-body">OK/NG、任せる基準、現場で迷いやすい判断を見える形にします。</p>
+              </div>
+            </li>
+            <li class="how-step">
+              <span class="how-step-num">04</span>
+              <div class="how-step-content">
+                <h4 class="how-step-title">資産化</h4>
+                <p class="how-step-body">マニュアル、チェックリスト、業務フロー、社長専用AIチャットへ展開します。</p>
+              </div>
+            </li>
+          </ol>
+        </div><!-- /how-block STRUCTURE -->
+
+        <!-- ▼ 03 ACCOMPANY / 伴う -->
+        <div class="how-block">
+          <div class="how-block-meta">
+            <span class="how-block-label">ACCOMPANY</span>
+            <h3 class="how-block-title">伴う</h3>
+            <p class="how-block-purpose">社長自身がAIやデジタルツールを使い、仕事を前に進められる状態にする。</p>
+          </div>
+          <ol class="how-steps">
+            <li class="how-step">
+              <span class="how-step-num">01</span>
+              <div class="how-step-content">
+                <h4 class="how-step-title">テーマ設定</h4>
+                <p class="how-step-body">社長が前に進めたい仕事、またはAIで変えられそうな業務を一緒に選びます。</p>
+              </div>
+            </li>
+            <li class="how-step">
+              <span class="how-step-num">02</span>
+              <div class="how-step-content">
+                <h4 class="how-step-title">個別伴走</h4>
+                <p class="how-step-body">週90〜120分、実際の仕事を題材にしながら手を動かします。</p>
+              </div>
+            </li>
+            <li class="how-step">
+              <span class="how-step-num">03</span>
+              <div class="how-step-content">
+                <h4 class="how-step-title">実務で実践</h4>
+                <p class="how-step-body">ホームページ、資料、発信、マニュアル、指示書などを社長自身の手で作ります。</p>
+              </div>
+            </li>
+            <li class="how-step">
+              <span class="how-step-num">04</span>
+              <div class="how-step-content">
+                <h4 class="how-step-title">型にする</h4>
+                <p class="how-step-body">一度できたものを、次も使える社長専用の仕事の型として定着させます。</p>
+              </div>
+            </li>
+          </ol>
+        </div><!-- /how-block ACCOMPANY -->
+
+        <!-- CTA (進め方後) =============================================
+             Google フォームURL はここの href="YOUR_GOOGLE_FORM_URL" を差し替え
+             ================================================================= -->
+        <div class="cta-block">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdK8Rc7PLtsVVw5PoGttToSYU9QsRuxLGdsSi49VNPGnMpAPA/viewform"
+             class="btn btn-primary"
+             target="_blank"
+             rel="noopener noreferrer"
+             id="cta-steps">
+            無料相談をはじめる
+          </a>
+          <p class="cta-note">まずは、今の仕事の進め方を一緒に整理します。</p>
+        </div>
+
+      </div>
+    </section><!-- /steps -->
+
+
+    <!-- =====================================================
+         07 / CASE STUDIES ― 実績・事例
+         ===================================================== -->
+    <section class="section section-cases" id="cases" aria-labelledby="cases-heading">
+      <div class="container">
+        <span class="section-label">Works</span>
+        <h2 class="section-heading" id="cases-heading">
+          これまでに整えてきたこと
+        </h2>
+
+        <div class="case-grid">
+
+          <article class="case-item">
+            <h3 class="case-title">アパレル店舗の業務マニュアル作成</h3>
+            <p class="case-body">
+              店舗運営の手順をNotion/Lark上に整理。
+              「あれどうしたらいいですか？」の質問数を約5割削減。
+            </p>
+          </article>
+
+          <article class="case-item">
+            <h3 class="case-title">コピペ作業の削減</h3>
+            <p class="case-body">
+              93回発生していたコピペ作業を、3回まで削減。
+              月20時間規模の作業時間削減につながる業務改善を実施。
+            </p>
+          </article>
+
+          <article class="case-item">
+            <h3 class="case-title">LINE公式アカウントの導線整理</h3>
+            <p class="case-body">
+              リッチメニュー、問い合わせフォーム、マニュアルへの入り口を整理し、
+              スタッフや顧客が迷わずアクセスできる導線を構築。
+            </p>
+          </article>
+
+          <article class="case-item">
+            <h3 class="case-title">FURIGANA.のHP制作</h3>
+            <p class="case-body">
+              このサイト自体も、AIを活用しながら構成・コピー・デザイン・実装を進めています。
+              同じように、社長自身が自社の発信や採用ページを動かせる状態を目指します。
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section><!-- /cases -->
+
+
+    <!-- =====================================================
+         08 / PRICING ― 料金目安
+         ===================================================== -->
+    <section class="section section-pricing" id="pricing" aria-labelledby="pricing-heading">
+      <div class="container">
+        <span class="section-label">Price</span>
+        <h2 class="section-heading" id="pricing-heading">料金の目安</h2>
+
+        <p class="pricing-lead">
+          課題や期間に応じて、内容を設計します。<br>
+          まずは小さく試し、必要に応じて継続支援へ進む形をおすすめしています。
+        </p>
+
+        <!-- 料金表: 価格の変更はここを編集してください -->
+        <div class="pricing-table" role="table" aria-label="料金表">
+
+          <div class="pricing-row pricing-row--free" role="row">
+            <div class="pricing-name" role="cell">
+              <span class="pricing-badge">FREE</span>初回相談
+            </div>
+            <div class="pricing-detail" role="cell">こちらのページからのお申し込み / 60分</div>
+            <div class="pricing-price" role="cell">¥ 0</div>
+          </div>
+
+          <div class="pricing-row" role="row">
+            <div class="pricing-name" role="cell">判断基準インタビュー</div>
+            <div class="pricing-detail" role="cell">社長の判断基準を言語化</div>
+            <div class="pricing-price" role="cell">¥ 50,000〜</div>
+          </div>
+
+          <div class="pricing-row" role="row">
+            <div class="pricing-name" role="cell">仕組み化伴走</div>
+            <div class="pricing-detail" role="cell">棚卸し・マニュアル・業務フロー・AI活用</div>
+            <div class="pricing-price" role="cell">¥ 100,000〜 <span class="pricing-unit">/月</span></div>
+          </div>
+
+          <div class="pricing-row" role="row">
+            <div class="pricing-name" role="cell">個別伴走</div>
+            <div class="pricing-detail" role="cell">週60分 / 実務を一緒に進める</div>
+            <div class="pricing-price" role="cell">内容により設計</div>
+          </div>
+
+        </div><!-- /pricing-table -->
+
+
+      </div>
+    </section><!-- /pricing -->
+
+
+    <!-- =====================================================
+         09 / PROFILE ― プロフィール
+         ===================================================== -->
+    <section class="section section-profile" id="profile" aria-labelledby="profile-heading">
+      <div class="container">
+        <span class="section-label">Profile</span>
+
+        <div class="profile-inner">
+
+          <!-- プロフィール写真：assets/images/profile/profile-shuya-kogiso.jpg を差し替え -->
+          <div class="profile-photo-wrap">
+            <div class="profile-photo-placeholder">
+              <img src="assets/images/profile/profile-shuya-kogiso.jpg"
+                   alt="小木曽秀弥のプロフィール写真"
+                   loading="lazy">
+            </div>
+          </div>
+
+          <div class="profile-text">
+            <p class="profile-role">社長の翻訳者</p>
+            <h2 class="profile-name-ja" id="profile-heading">小木曽 秀弥</h2>
+            <p class="profile-name-en">Shuya Kogiso</p>
+
+            <p class="profile-body">
+              サービス業の現場で培われた感覚や判断を、
+              言葉・仕組み・AI活用に翻訳する人。
+            </p>
+            <p class="profile-body">
+              アパレル店舗の業務マニュアル作成、店舗オペレーション改善、
+              LINE公式アカウントの導線整理、Excelを用いた業務改善、
+              Notion/Larkによるナレッジ整理などを行う。
+            </p>
+            <p class="profile-body">
+              FURIGANA.では、社長にとっては当たり前すぎて言葉になっていない判断基準を引き出し、
+              会社で使える形に整えることを大切にしています。
+            </p>
+
+            <div class="profile-proof" aria-label="主な実績">
+              <span>業務マニュアル</span>
+              <span>店舗導線整理</span>
+              <span>AI活用伴走</span>
+            </div>
+
+            <blockquote class="profile-quote">
+              <p>
+                私が目指しているのは、<br>
+                社長の代わりにすべてを作ることではありません。
+              </p>
+              <p>
+                社長自身が、自分の考えを言葉にし、<br>
+                仕事を動かし、必要な道具を選べるようになること。
+              </p>
+              <p>
+                そのために、社長のそばで聞き、整理し、<br>
+                実際の仕事に落とし込むところまで伴います。
+              </p>
+            </blockquote>
+
+          </div>
+
+        </div><!-- /profile-inner -->
+      </div>
+    </section><!-- /profile -->
+
+
+    <!-- =====================================================
+         10 / SNS ― SNSセクション
+         ヘッダーの「SNS」リンクはここへ移動します
+         ===================================================== -->
+    <section class="section section-sns" id="sns" aria-labelledby="sns-heading">
+      <div class="container">
+        <span class="section-label">Links</span>
+        <h2 class="section-heading" id="sns-heading">SNS / LINKS</h2>
+        <p class="sns-lead">必要な方は、こちらもご確認ください。</p>
+
+        <!-- ================================================
+             SNSリンク：URLが決まり次第、各 href="#" を差し替えてください。
+             例: href="https://x.com/your_account"
+                 href="https://instagram.com/your_account"
+                 href="https://facebook.com/your_account"
+                 href="https://note.com/your_account"
+             SNSの追加・削除は <li>〜</li> 単位で編集してください。
+             ================================================ -->
+        <ul class="sns-links" role="list">
+          <li><a href="https://www.instagram.com/kogiso_furigana?igsh=dHhvbHN0cmZvZXh3&amp;utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://x.com/kogisodesu" target="_blank" rel="noopener noreferrer">X</a></li>
+          <li><a href="https://note.com/kogiso_creative" target="_blank" rel="noopener noreferrer">note</a></li>
+          <li><a href="https://www.facebook.com/share/1HvaUS6EzU/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+        </ul>
+      </div>
+    </section><!-- /sns -->
+
+
+    <!-- =====================================================
+         10 / FAQ ― よくある質問
+         ===================================================== -->
+    <section class="section section-faq" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-heading" id="faq-heading">よくある質問</h2>
+
+        <dl class="faq-list">
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-question"
+                      aria-expanded="false"
+                      aria-controls="faq-answer-1">
+                AIを触ったことがなくても大丈夫ですか？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd class="faq-answer" id="faq-answer-1" hidden>
+              <p>
+                大丈夫です。一般的な新入社員に説明するくらいの前提で進めます。
+                専門用語から入るのではなく、実際の仕事で何をしたいかから一緒に整理します。
+              </p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-question"
+                      aria-expanded="false"
+                      aria-controls="faq-answer-2">
+                社員にもAIを使わせた方がいいですか？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd class="faq-answer" id="faq-answer-2" hidden>
+              <p>
+                まずは社長個人で使える状態をおすすめしています。
+                機密情報の扱いや入力ルールが整わないまま社内展開すると、リスクもあります。
+                必要に応じて、社内導入のルールづくりや教育も支援します。
+              </p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-question"
+                      aria-expanded="false"
+                      aria-controls="faq-answer-3">
+                どんな業務に向いていますか？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd class="faq-answer" id="faq-answer-3" hidden>
+              <p>
+                採用ページ、SNS投稿、ブログ、資料作成、業務マニュアル、日報分析、
+                外注先への指示書づくり、店長への共有資料などに向いています。
+              </p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-question"
+                      aria-expanded="false"
+                      aria-controls="faq-answer-4">
+                どれくらいで変化が出ますか？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd class="faq-answer" id="faq-answer-4" hidden>
+              <p>
+                早いものでは初回から、文章や資料の叩き台を作れるようになります。
+                ただし、社長自身の仕事の型として定着させるには、
+                6ヶ月〜1年ほどをおすすめしています。
+              </p>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-question"
+                      aria-expanded="false"
+                      aria-controls="faq-answer-5">
+                オンラインでも可能ですか？
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </dt>
+            <dd class="faq-answer" id="faq-answer-5" hidden>
+              <p>
+                基本は対面を大切にしていますが、
+                距離や内容に応じてオンラインでも対応可能です。
+              </p>
+            </dd>
+          </div>
+
+        </dl><!-- /faq-list -->
+      </div>
+    </section><!-- /faq -->
+
+
+    <!-- =====================================================
+         11 / CONTACT ― 最終CTA
+         ===================================================== -->
+    <section class="section section-final-cta" id="contact" aria-labelledby="cta-heading">
+      <div class="container">
+        <span class="section-label">Contact</span>
+        <h2 class="final-cta-heading" id="cta-heading">
+          社長の仕事を、<br>社長の手に戻す。
+        </h2>
+        <p class="final-cta-body">
+          まずは60分、今の仕事の進め方や、AIで変えられそうな業務を一緒に整理します。<br>
+          こちらのページからご連絡いただいた方は、初回60分無料でご相談いただけます。
+        </p>
+
+        <!-- CTA ④ (最終) =====================================================
+             ▼▼▼ Google フォームURLの差し替えはここ ▼▼▼
+             href="YOUR_GOOGLE_FORM_URL" を実際のURLに変更してください
+             例: href="https://forms.gle/XXXXXXXXXXXXXXXXX"
+             ================================================================= -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdK8Rc7PLtsVVw5PoGttToSYU9QsRuxLGdsSi49VNPGnMpAPA/viewform"
+           class="btn btn-primary btn-large btn-on-dark"
+           target="_blank"
+           rel="noopener noreferrer"
+           id="cta-final">
+          無料相談をはじめる
+        </a>
+
+        <p class="final-cta-note">こちらのページからのご相談 &ensp;/&ensp; 初回60分無料</p>
+      </div>
+    </section><!-- /contact -->
+
+  </main><!-- /main -->
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-en footer-logo">FURIGANA.</span>
+          <span class="footer-tagline">社長の当たり前に、ふりがなを振る。</span>
+        </div>
+
+        <!-- ================================================
+             フッター SNS リンク
+             URLが決まり次第、各 href="#" を実際のURLに差し替えてください。
+             例: href="https://x.com/your_account"
+             SNSの追加・削除は <li>〜</li> 単位で編集してください。
+             ================================================ -->
+        <ul class="footer-sns" role="list">
+          <li><a href="https://www.instagram.com/kogiso_furigana?igsh=dHhvbHN0cmZvZXh3&amp;utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://x.com/kogisodesu" target="_blank" rel="noopener noreferrer">X</a></li>
+          <li><a href="https://note.com/kogiso_creative" target="_blank" rel="noopener noreferrer">note</a></li>
+          <li><a href="https://www.facebook.com/share/1HvaUS6EzU/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+        </ul><!-- /footer-sns -->
+
+        <!-- コピーライト年を変更する場合はここを編集 -->
+        <p class="footer-copy">&copy; 2026 FURIGANA. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
