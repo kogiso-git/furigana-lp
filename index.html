@@ -550,55 +550,66 @@
 
         <div class="profile-inner">
 
-          <!-- プロフィール写真：assets/images/profile/profile-shuya-kogiso.jpg を差し替え -->
-          <div class="profile-photo-wrap">
-            <div class="profile-photo-placeholder">
-              <img src="assets/images/profile/profile-shuya-kogiso.jpg"
-                   alt="小木曽秀弥のプロフィール写真"
-                   loading="lazy">
+          <!-- 上段：プロフィール情報 2カラム -->
+          <div class="profile-upper">
+
+            <!-- 左カラム: 写真 -->
+            <div class="profile-visual">
+              <!-- プロフィール写真：assets/images/profile/profile-shuya-kogiso.jpg を差し替え -->
+              <div class="profile-photo-placeholder">
+                <img src="assets/images/profile/profile-shuya-kogiso.jpg"
+                     alt="小木曽秀弥のプロフィール写真"
+                     loading="lazy">
+              </div>
             </div>
+
+            <!-- 右カラム: 肩書き・名前・紹介文・タグ -->
+            <div class="profile-text">
+              <p class="profile-role">社長の翻訳者</p>
+              <h2 class="profile-name-ja" id="profile-heading">小木曽 秀弥</h2>
+              <p class="profile-name-en">Shuya Kogiso</p>
+
+              <p class="profile-tagline">
+                現場で磨かれた判断を、<br>
+                会社で使える言葉と仕組みに整える。
+              </p>
+
+              <p class="profile-body">
+                サービス業の現場で培われた感覚や判断を、
+                言葉・仕組み・AI活用に翻訳しています。
+              </p>
+            </div>
+
+          </div><!-- /profile-upper -->
+
+          <!-- 中段：整えてきたこと -->
+          <div class="profile-works">
+            <p class="profile-works-label">整えてきたこと</p>
+            <ul class="profile-works-list" role="list">
+              <li>業務マニュアル</li>
+              <li>店舗オペレーション</li>
+              <li>LINE 導線</li>
+              <li>Excel 改善</li>
+              <li>Notion / Lark 整理</li>
+              <li>AI 活用伴走</li>
+            </ul>
           </div>
 
-          <div class="profile-text">
-            <p class="profile-role">社長の翻訳者</p>
-            <h2 class="profile-name-ja" id="profile-heading">小木曽 秀弥</h2>
-            <p class="profile-name-en">Shuya Kogiso</p>
-
-            <p class="profile-body">
-              サービス業の現場で培われた感覚や判断を、
-              言葉・仕組み・AI活用に翻訳する人。
+          <!-- 下段：思想メッセージ 1カラム独立ブロック -->
+          <div class="profile-message">
+            <span class="section-label">Belief</span>
+            <p>
+              私が目指しているのは、<br>
+              社長の仕事を代行することではありません。
             </p>
-            <p class="profile-body">
-              アパレル店舗の業務マニュアル作成、店舗オペレーション改善、
-              LINE公式アカウントの導線整理、Excelを用いた業務改善、
-              Notion/Larkによるナレッジ整理などを行う。
+            <p>
+              社長自身が、自分の考えを言葉にし、<br>
+              仕事を動かし、必要な道具を選べるようになること。
             </p>
-            <p class="profile-body">
-              FURIGANA.では、社長にとっては当たり前すぎて言葉になっていない判断基準を引き出し、
-              会社で使える形に整えることを大切にしています。
+            <p>
+              そのために、社長のそばで聞き、整理し、<br>
+              実際の仕事に落とし込むところまで伴います。
             </p>
-
-            <div class="profile-proof" aria-label="主な実績">
-              <span>業務マニュアル</span>
-              <span>店舗導線整理</span>
-              <span>AI活用伴走</span>
-            </div>
-
-            <blockquote class="profile-quote">
-              <p>
-                私が目指しているのは、<br>
-                社長の代わりにすべてを作ることではありません。
-              </p>
-              <p>
-                社長自身が、自分の考えを言葉にし、<br>
-                仕事を動かし、必要な道具を選べるようになること。
-              </p>
-              <p>
-                そのために、社長のそばで聞き、整理し、<br>
-                実際の仕事に落とし込むところまで伴います。
-              </p>
-            </blockquote>
-
           </div>
 
         </div><!-- /profile-inner -->
@@ -610,11 +621,10 @@
          10 / SNS ― SNSセクション
          ヘッダーの「SNS」リンクはここへ移動します
          ===================================================== -->
-    <section class="section section-sns" id="sns" aria-labelledby="sns-heading">
+    <section class="section section-sns" id="sns" aria-label="SNS">
       <div class="container">
-        <span class="section-label">Links</span>
-        <h2 class="section-heading" id="sns-heading">SNS / LINKS</h2>
-        <p class="sns-lead">必要な方は、こちらもご確認ください。</p>
+        <span class="section-label">SNS</span>
+        <p class="sns-lead">各種SNSはこちら。</p>
 
         <!-- ================================================
              SNSリンク：URLが決まり次第、各 href="#" を差し替えてください。
