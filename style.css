@@ -1521,9 +1521,22 @@ p, li,
   /* Profile */
   .profile-visual { width: 100%; }
 
-  /* SNS / Footer SNS: 2列グリッド */
+  /* SNS / Footer SNS: スマホで横1列・控えめサイズ */
+  .sns-links,
+  .footer-sns {
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
   .sns-links a,
-  .footer-sns a { flex: 1 1 calc(50% - 10px); justify-content: center; }
+  .footer-sns a {
+    flex: 0 0 auto;
+    min-height: 36px;
+    padding: 0 10px;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    justify-content: center;
+  }
 }
 
 /* ── 極小画面 (〜390px) ── */
