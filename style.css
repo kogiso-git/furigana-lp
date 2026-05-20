@@ -732,6 +732,114 @@ p, li,
 
 
 /* ============================================================
+   11b. 3サービスの関係性 (Flow)
+   ============================================================ */
+.section-flow {
+  background: var(--c-cream);
+}
+
+.flow-lead {
+  font-size: 0.875rem;
+  line-height: 2;
+  color: var(--c-ink);
+  margin-bottom: var(--sp-xl);
+  letter-spacing: 0.03em;
+}
+
+.flow-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+  align-items: stretch;
+}
+
+.flow-step {
+  flex: 1;
+  padding: var(--sp-md) 0;
+  border-top: 1px solid var(--c-border);
+}
+
+.flow-step-name {
+  display: block;
+  font-family: var(--f-ja-serif);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 400;
+  color: var(--c-charcoal);
+  margin-bottom: var(--sp-xs);
+  letter-spacing: 0.04em;
+}
+
+.flow-step-body {
+  font-size: 0.875rem;
+  line-height: 1.9;
+  color: var(--c-gray);
+  letter-spacing: 0.03em;
+}
+
+.flow-step-eq {
+  display: block;
+  font-family: var(--f-ja-serif);
+  font-size: 1.2rem;
+  color: var(--c-border);
+  text-align: center;
+  line-height: 1;
+  padding: 4px 0;
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   11c. 組む＋伴うの本命価値 (Set)
+   ============================================================ */
+.section-set {
+  background: var(--c-bg);
+}
+
+.set-lead {
+  font-family: var(--f-ja-serif);
+  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+  line-height: 2;
+  color: var(--c-gray);
+  letter-spacing: 0.04em;
+  margin-bottom: var(--sp-xl);
+}
+
+.set-body {
+  max-width: 720px;
+}
+
+.set-values {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.set-values li {
+  position: relative;
+  font-family: var(--f-ja-serif);
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  line-height: 2;
+  padding: var(--sp-sm) 0 var(--sp-sm) var(--sp-lg);
+  border-bottom: 1px solid var(--c-border);
+  color: var(--c-ink);
+  letter-spacing: 0.04em;
+}
+.set-values li:first-child {
+  border-top: 1px solid var(--c-border);
+}
+.set-values li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  top: var(--sp-sm);
+  font-family: var(--f-en);
+  font-size: 0.75rem;
+  color: var(--c-stone);
+  line-height: 2;
+}
+
+
+/* ============================================================
    12. できるようになること (Outcomes)
    ============================================================ */
 .section-outcomes {
@@ -926,6 +1034,55 @@ p, li,
 
 
 /* ============================================================
+   14b. どこから始めるか (Guide)
+   ============================================================ */
+.section-guide {
+  background: var(--c-bg);
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.guide-item {
+  padding: var(--sp-lg) 0;
+  border-top: 1px solid var(--c-border);
+}
+.guide-item:last-child {
+  border-bottom: 1px solid var(--c-border);
+}
+
+.guide-title {
+  font-family: var(--f-ja-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--c-ink);
+  margin-bottom: var(--sp-xs);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+.guide-item p {
+  font-size: 0.875rem;
+  line-height: 2;
+  color: var(--c-gray);
+  letter-spacing: 0.03em;
+}
+
+/* おすすめ枠: 細いネイビー左ライン */
+.guide-item--featured {
+  padding-left: clamp(20px, 3vw, 32px);
+  border-left: 2px solid var(--c-navy);
+  margin-left: 0;
+}
+.guide-item--featured .guide-title {
+  color: var(--c-navy);
+}
+
+
+/* ============================================================
    15. 料金目安 (Pricing)
    ============================================================ */
 .section-pricing {
@@ -1016,6 +1173,85 @@ p, li,
 .pricing-unit {
   font-size: 0.75rem;
   color: var(--c-gray);
+}
+
+/* 補足メモ (pricing-detail内) */
+.pricing-note {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--c-stone);
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+}
+
+/* セット行: 名前をネイビーに */
+.pricing-row--set .pricing-name {
+  color: var(--c-navy);
+}
+
+
+/* ============================================================
+   15b. 初期モニター枠 (Monitor)
+   ============================================================ */
+.section-monitor {
+  background: var(--c-cream);
+}
+
+.monitor-lead {
+  font-size: 0.875rem;
+  line-height: 2;
+  color: var(--c-ink);
+  margin-bottom: var(--sp-lg);
+  letter-spacing: 0.03em;
+}
+
+.monitor-slots {
+  margin-bottom: var(--sp-lg);
+}
+
+.monitor-slots-count {
+  font-family: var(--f-en);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--c-gray);
+}
+.monitor-slots-count strong {
+  font-family: var(--f-en);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--c-navy);
+  letter-spacing: 0.05em;
+  margin: 0 2px;
+}
+
+.monitor-conditions {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 680px;
+}
+
+.monitor-conditions li {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.9;
+  padding: var(--sp-sm) 0 var(--sp-sm) var(--sp-lg);
+  border-bottom: 1px solid var(--c-border);
+  color: var(--c-ink);
+  letter-spacing: 0.03em;
+}
+.monitor-conditions li:first-child {
+  border-top: 1px solid var(--c-border);
+}
+.monitor-conditions li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  top: var(--sp-sm);
+  font-family: var(--f-en);
+  font-size: 0.75rem;
+  color: var(--c-stone);
+  line-height: 1.9;
 }
 
 
@@ -1557,6 +1793,32 @@ p, li,
     grid-template-columns: repeat(3, 1fr);
     gap: 0 var(--sp-xl);
     align-items: start;
+  }
+
+  /* Flow: 横並び */
+  .flow-steps {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+  }
+  .flow-step {
+    padding: var(--sp-lg) var(--sp-md) var(--sp-lg) 0;
+  }
+  .flow-step-eq {
+    padding: var(--sp-lg) var(--sp-sm);
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: var(--sp-lg);
+  }
+
+  /* Guide: 2列 */
+  .guide-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 var(--sp-xl);
+  }
+  .guide-item:nth-last-child(-n+2) {
+    border-bottom: 1px solid var(--c-border);
   }
 
   /* Cases: 2列 */
