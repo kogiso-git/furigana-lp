@@ -45,25 +45,41 @@
    02. スクロール フェードイン (IntersectionObserver)
    ============================================================ */
 (function () {
+  /* アクセシビリティ: 動き軽減設定がONの場合はスキップ */
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   /* フェードイン対象のセレクター一覧 */
   var selectors = [
     '.section-heading',
     '.section-label',
     '.pain-list',
     '.pain-resolve',
-    '.proof-strip',
     '.what-intro',
     '.what-flow',
     '.what-goal',
     '.service-card',
+    '.service-result',
     '.outcome-list',
     '.outcome-note',
-    '.step',
+    '.steps-lead',
+    '.how-block-meta',
+    '.how-steps',
     '.case-item',
-    '.pricing-row',
+    '.flow-lead',
+    '.flow-step',
+    '.set-lead',
+    '.set-values',
+    '.deliverables-lead',
+    '.deliverables-col',
+    '.deliverables-closing',
+    '.guide-item',
     '.pricing-lead',
+    '.pricing-row',
+    '.monitor-lead',
+    '.monitor-slots',
+    '.monitor-conditions',
+    '.cta-accent',
     '.profile-inner',
-    '.section-sns',
     '.faq-item',
     '.final-cta-heading',
     '.final-cta-body',
@@ -80,11 +96,26 @@
     el.classList.add('fade-in');
   });
 
-  /* IntersectionObserver が使えない場合はすべて表示 */
-  if (!('IntersectionObserver' in window)) {
+  /* 動き軽減 or IntersectionObserver非対応の場合はすべて即時表示 */
+  if (prefersReduced || !('IntersectionObserver' in window)) {
     targets.forEach(function (el) { el.classList.add('is-visible'); });
     return;
   }
+
+  /* グループ要素にスタッガー遅延を付与 */
+  [
+    { selector: '.service-cards .service-card',          delay: 0.12 },
+    { selector: '.case-grid .case-item',                 delay: 0.10 },
+    { selector: '.guide-grid .guide-item',               delay: 0.08 },
+    { selector: '.deliverables-grid .deliverables-col',  delay: 0.10 },
+    { selector: '.flow-steps .flow-step',                delay: 0.12 },
+    { selector: '.pricing-table .pricing-row',           delay: 0.06 },
+    { selector: '.faq-list .faq-item',                   delay: 0.05 },
+  ].forEach(function (group) {
+    document.querySelectorAll(group.selector).forEach(function (el, i) {
+      el.style.transitionDelay = (i * group.delay) + 's';
+    });
+  });
 
   var observer = new IntersectionObserver(
     function (entries) {
@@ -96,8 +127,8 @@
       });
     },
     {
-      rootMargin: '0px 0px -56px 0px',
-      threshold: 0.08,
+      rootMargin: '0px 0px -48px 0px',
+      threshold: 0.06,
     }
   );
 
