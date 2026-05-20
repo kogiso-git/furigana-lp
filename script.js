@@ -173,7 +173,9 @@
 
       e.preventDefault();
 
-      var headerH  = header ? header.offsetHeight : 60;
+      /* スマホは固定ヘッダーなしなのでオフセット不要 */
+      var headerFixed = header && window.getComputedStyle(header).position === 'fixed';
+      var headerH  = headerFixed ? header.offsetHeight : 0;
       var targetTop = target.getBoundingClientRect().top + window.scrollY - headerH;
 
       window.scrollTo({ top: targetTop, behavior: 'smooth' });

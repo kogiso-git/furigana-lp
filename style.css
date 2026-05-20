@@ -465,7 +465,6 @@ a.mobile-nav-link:hover {
 .mobile-nav-cta {
   text-align: center;
   padding-top: var(--sp-lg);
-  border-top: 1px solid var(--c-border);
 }
 .mobile-nav-cta .btn {
   width: auto !important; /* .btn { width: 100% } を上書き */
@@ -966,14 +965,12 @@ a.mobile-nav-link:hover {
 }
 
 .service-result {
-  margin-top: var(--sp-md);
-  padding-top: var(--sp-md);
-  border-top: 1px solid var(--c-border);
+  margin-top: var(--sp-sm);
   font-family: var(--f-ja-serif);
-  font-size: clamp(0.875rem, 1.4vw, 0.95rem);
+  font-size: 0.82rem;
   font-style: italic;
-  line-height: 1.9;
-  color: var(--c-gray);
+  line-height: 1.85;
+  color: var(--c-stone);
   letter-spacing: 0.04em;
 }
 
@@ -1336,14 +1333,43 @@ a.mobile-nav-link:hover {
   letter-spacing: 0.03em;
 }
 
-/* おすすめ枠: 細いネイビー左ライン */
+/* おすすめ枠: 薄いネイビー四辺枠＋生成り背景 */
 .guide-item--featured {
-  padding-left: clamp(20px, 3vw, 32px);
-  border-left: 2px solid var(--c-navy);
-  margin-left: 0;
+  border: 1px solid rgba(26, 42, 68, 0.28);
+  background: var(--c-card);
+  padding: var(--sp-md) var(--sp-lg);
+  margin-top: var(--sp-sm);
+}
+/* :last-child rule（上位 specificity）を上書き */
+.guide-item--featured.guide-item:last-child {
+  border-bottom: 1px solid rgba(26, 42, 68, 0.28);
 }
 .guide-item--featured .guide-title {
+  font-size: 1.05rem;
   color: var(--c-navy);
+  margin-bottom: 4px;
+  letter-spacing: 0.05em;
+}
+
+/* RECOMMENDED ラベル */
+.guide-featured-label {
+  display: block;
+  font-family: var(--f-en);
+  font-size: 0.7rem;
+  font-style: italic;
+  letter-spacing: 0.22em;
+  color: rgba(26, 42, 68, 0.52);
+  margin-bottom: var(--sp-xs);
+}
+
+/* サブタイトル */
+.guide-featured-sub {
+  font-family: var(--f-ja-sans);
+  font-size: 0.76rem;
+  color: var(--c-stone);
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+  margin-bottom: var(--sp-sm);
 }
 
 
@@ -2054,12 +2080,14 @@ a.mobile-nav-link:hover {
   /* 本文行間をわずかに締める（スマホの縦幅を活かす） */
   p, li { line-height: 1.9; }
 
-  /* ヘッダー: スマホはハンバーガー構成 */
+  /* ヘッダー: スマホはハンバーガー構成・固定解除 */
   .site-header {
+    position: relative; /* fixed → relative: 紙面を遮らない */
+    z-index: 200;       /* mobile-menu (190) の上でハンバーガーを常に見せる */
     height: 60px;
-    background: rgba(247, 245, 240, 0.93);
-    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-    border-bottom-color: rgba(204, 199, 188, 0.45);
+    background: var(--c-bg);
+    backdrop-filter: none; -webkit-backdrop-filter: none;
+    border-bottom-color: rgba(204, 199, 188, 0.4);
     box-shadow: none;
   }
   .site-header .container {
@@ -2077,9 +2105,13 @@ a.mobile-nav-link:hover {
   .site-nav .nav-cta { padding: 7px 13px; font-size: 0.73rem; }
   .mobile-menu { display: block; }
 
-  /* Hero */
-  .hero { min-height: auto; padding-top: 60px; }
-  .hero .container { padding-top: 60px; padding-bottom: 58px; }
+  /* Hero: 固定ヘッダーオフセット不要 */
+  .hero { min-height: auto; padding-top: 0; }
+  .hero .container { padding-top: var(--sp-xl); padding-bottom: 58px; }
+
+  /* アンカースクロール: 固定ヘッダーなしなのでオフセット解除 */
+  .section[id] { scroll-margin-top: 20px; }
+  .service-card[id] { scroll-margin-top: 20px; }
   /* 9.5vw: 375px×9.5vw=35.6px → 8文字×35.6px=285px → コンテナ331px内に収まる */
   .hero-heading { font-size: clamp(2.1rem, 9.5vw, 3.2rem); line-height: 1.3; }
   .hero-sub { font-size: 1rem; line-height: 1.95; }
