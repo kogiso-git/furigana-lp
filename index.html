@@ -39,6 +39,11 @@
        ===================================================== -->
   <header class="site-header" id="top" role="banner">
     <div class="container">
+      <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
       <a href="#top" class="site-logo" aria-label="FURIGANA. トップへ戻る">
         <span class="logo-en">FURIGANA.</span>
         <span class="logo-ja">社長の翻訳者</span>
@@ -51,6 +56,58 @@
       </nav>
     </div>
   </header>
+
+  <!-- =====================================================
+       MOBILE MENU ― スマホ用ハンバーガーメニュー
+       ===================================================== -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="ナビゲーションメニュー" aria-hidden="true">
+    <nav class="mobile-nav" aria-label="モバイルナビゲーション">
+
+      <ul class="mobile-nav-list">
+
+        <li class="mobile-nav-item">
+          <a href="#services" class="mobile-nav-link">支援内容</a>
+          <ul class="mobile-nav-sub">
+            <li><a href="#service-listen" class="mobile-nav-sub-link">聴く。</a></li>
+            <li><a href="#service-structure" class="mobile-nav-sub-link">組む。</a></li>
+            <li><a href="#service-accompany" class="mobile-nav-sub-link">伴う。</a></li>
+          </ul>
+        </li>
+
+        <li class="mobile-nav-item">
+          <a href="#deliverables" class="mobile-nav-link">整えられること</a>
+        </li>
+
+        <li class="mobile-nav-item">
+          <a href="#profile" class="mobile-nav-link">プロフィール</a>
+        </li>
+
+        <li class="mobile-nav-item">
+          <span class="mobile-nav-link mobile-nav-link--label">SNS</span>
+          <ul class="mobile-nav-sns">
+            <li><a href="https://www.instagram.com/kogiso_furigana?igsh=dHhvbHN0cmZvZXh3&amp;utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://x.com/kogisodesu" target="_blank" rel="noopener noreferrer">X</a></li>
+            <li><a href="https://note.com/kogiso_creative" target="_blank" rel="noopener noreferrer">note</a></li>
+            <li><a href="https://www.facebook.com/share/1HvaUS6EzU/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          </ul>
+        </li>
+
+        <li class="mobile-nav-item">
+          <a href="#faq" class="mobile-nav-link">よくある質問</a>
+        </li>
+
+      </ul>
+
+      <div class="mobile-nav-cta">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdK8Rc7PLtsVVw5PoGttToSYU9QsRuxLGdsSi49VNPGnMpAPA/viewform"
+           class="btn btn-primary"
+           target="_blank"
+           rel="noopener noreferrer">無料相談をはじめる</a>
+        <p class="cta-note">初回60分 / 完全無料</p>
+      </div>
+
+    </nav>
+  </div><!-- /mobile-menu -->
 
   <main id="main-content">
 
@@ -166,7 +223,7 @@
         <div class="service-cards">
 
           <!-- ▼ 01 聴く -->
-          <article class="service-card">
+          <article class="service-card" id="service-listen">
             <div class="service-card-header">
               <span class="service-name-en">LISTEN</span>
             </div>
@@ -198,7 +255,7 @@
           </article>
 
           <!-- ▼ 02 組む -->
-          <article class="service-card">
+          <article class="service-card" id="service-structure">
             <div class="service-card-header">
               <span class="service-name-en">STRUCTURE</span>
             </div>
@@ -229,7 +286,7 @@
           </article>
 
           <!-- ▼ 03 伴う -->
-          <article class="service-card">
+          <article class="service-card" id="service-accompany">
             <div class="service-card-header">
               <span class="service-name-en">ACCOMPANY</span>
             </div>

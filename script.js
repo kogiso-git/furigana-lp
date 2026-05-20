@@ -180,3 +180,55 @@
     });
   });
 })();
+
+
+/* ============================================================
+   05. ハンバーガーメニュー トグル
+   ============================================================ */
+(function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var menu   = document.querySelector('.mobile-menu');
+  if (!toggle || !menu) { return; }
+
+  function openMenu() {
+    toggle.classList.add('is-open');
+    menu.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'メニューを閉じる');
+    menu.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    var firstLink = menu.querySelector('a');
+    if (firstLink) { firstLink.focus(); }
+  }
+
+  function closeMenu() {
+    toggle.classList.remove('is-open');
+    menu.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'メニューを開く');
+    menu.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  toggle.addEventListener('click', function () {
+    if (toggle.classList.contains('is-open')) { closeMenu(); } else { openMenu(); }
+  });
+
+  /* メニュー内リンクをタップしたら閉じる */
+  menu.querySelectorAll('a[href]').forEach(function (link) {
+    link.addEventListener('click', function () { closeMenu(); });
+  });
+
+  /* Escキーで閉じる */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && toggle.classList.contains('is-open')) {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+
+  /* PC幅にリサイズされたら閉じる */
+  window.addEventListener('resize', function () {
+    if (window.innerWidth >= 768 && toggle.classList.contains('is-open')) { closeMenu(); }
+  }, { passive: true });
+})();
