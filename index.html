@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FURIGANA.｜AIを、現場で回るところまで。</title>
+<meta name="description" content="FURIGANA.は、判断が、いつも同じところへ戻ってくる中小企業に向けて、AIとデジタルツールで事務作業の時間を減らし、ベテランの判断を会社に残し、空いた時間を売上をつくる時間に変える伴走支援です。">
+<link rel="canonical" href="https://example.com/"><!-- 要差し替え: 本番ドメイン -->
+
+<meta property="og:title" content="FURIGANA.｜AIを、現場で回るところまで。">
+<meta property="og:description" content="判断が、いつも同じところへ戻ってくる会社のための、AI活用の伴走支援。事務作業を減らし、ベテランの判断を残し、空いた時間を売上をつくる時間に変えていきます。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/"><!-- 要差し替え -->
+<meta property="og:image" content="https://example.com/assets/img/ogp.png"><!-- 要差し替え -->
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="FURIGANA.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FURIGANA.｜AIを、現場で回るところまで。">
+<meta name="twitter:description" content="判断が、いつも同じところへ戻ってくる会社のための、AI活用の伴走支援。">
+<meta name="twitter:image" content="https://example.com/assets/img/ogp.png"><!-- 要差し替え -->
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "FURIGANA.",
+  "description": "中小企業に向けたAI活用の伴走支援。事務作業の削減、ベテランの判断の言語化、空いた時間の再配分を支援する。",
+  "founder": {
+    "@type": "Person",
+    "name": "小木曽 秀弥",
+    "jobTitle": "AI活用プランナー"
+  },
+  "areaServed": "【要差し替え:対応エリア】",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "茨城県",
+    "addressLocality": "龍ケ崎市",
+    "addressCountry": "JP"
+  },
+  "url": "https://example.com/",
+  "image": "https://example.com/assets/img/ogp.png"
+}
+</script>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">本文へスキップ</a>
+
+<svg class="icon-defs" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="icon-clock" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 15v9l6 4"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M17 24.5l5 5 9-11"/></symbol>
+    <symbol id="icon-shift" viewBox="0 0 48 48"><rect x="7" y="9" width="34" height="30" rx="3"/><path d="M7 18h34"/><path d="M15 5v8M33 5v8"/><circle cx="16" cy="27" r="1.5" fill="currentColor" stroke="none"/><circle cx="24" cy="27" r="1.5" fill="currentColor" stroke="none"/><circle cx="32" cy="27" r="1.5" fill="currentColor" stroke="none"/><circle cx="16" cy="33" r="1.5" fill="currentColor" stroke="none"/><circle cx="24" cy="33" r="1.5" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 48 48"><rect x="6" y="11" width="36" height="26" rx="3"/><path d="M7 13l17 14 17-14"/></symbol>
+    <symbol id="icon-book" viewBox="0 0 48 48"><path d="M24 13c-4-3-10-4-16-3v25c6-1 12 0 16 3 4-3 10-4 16-3V10c-6-1-12 0-16 3z"/><path d="M24 13v25"/></symbol>
+    <symbol id="icon-database" viewBox="0 0 48 48"><ellipse cx="24" cy="12" rx="15" ry="6"/><path d="M9 12v10c0 3.3 6.7 6 15 6s15-2.7 15-6V12"/><path d="M9 22v10c0 3.3 6.7 6 15 6s15-2.7 15-6V22"/></symbol>
+    <symbol id="icon-bot" viewBox="0 0 48 48"><rect x="10" y="15" width="28" height="20" rx="6"/><circle cx="18" cy="25" r="2.1" fill="currentColor" stroke="none"/><circle cx="30" cy="25" r="2.1" fill="currentColor" stroke="none"/><path d="M19 30h10"/><path d="M24 15V9"/><circle cx="24" cy="7" r="2" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 48 48"><path d="M4 24h34"/><path d="M29 15l11 9-11 9"/></symbol>
+    <symbol id="icon-minus-circle" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M16 24h16"/></symbol>
+    <symbol id="icon-archive" viewBox="0 0 48 48"><rect x="8" y="13" width="32" height="8" rx="2"/><path d="M11 21v15a2 2 0 0 0 2 2h22a2 2 0 0 0 2-2V21"/><path d="M20 28h8"/></symbol>
+    <symbol id="icon-trend-up" viewBox="0 0 48 48"><path d="M7 33l10-10 7 7 16-16"/><path d="M31 14h9v9"/></symbol>
+    <symbol id="icon-chat" viewBox="0 0 48 48"><path d="M8 10h32a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H22l-9 8v-8H8a2 2 0 0 1-2-2V12a2 2 0 0 1 2-2z" transform="translate(2 0)"/></symbol>
+    <symbol id="icon-clipboard" viewBox="0 0 48 48"><rect x="12" y="8" width="24" height="34" rx="3"/><rect x="18" y="5" width="12" height="6" rx="2"/><path d="M17 21h14M17 27.5h14M17 34h9"/></symbol>
+    <symbol id="icon-gear" viewBox="0 0 48 48"><circle cx="24" cy="24" r="6"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6M11.5 11.5l4.2 4.2M32.3 32.3l4.2 4.2M36.5 11.5l-4.2 4.2M15.7 32.3l-4.2 4.2"/></symbol>
+    <symbol id="icon-refresh" viewBox="0 0 48 48"><path d="M40 22a16 16 0 1 0-3.8 12"/><path d="M40 10v11H29"/></symbol>
+    <symbol id="icon-person" viewBox="0 0 48 48"><circle cx="24" cy="16" r="8"/><path d="M8 40c0-9 7.2-15 16-15s16 6 16 15"/></symbol>
+    <symbol id="icon-doc" viewBox="0 0 48 48"><rect x="10" y="6" width="28" height="36" rx="2"/><path d="M16 17h16M16 24h16M16 31h9"/></symbol>
+    <symbol id="icon-alert" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 16v11"/><circle cx="24" cy="32" r="1.7" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="icon-monitor" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="23" rx="2"/><path d="M17 40h14M24 33v7"/></symbol>
+    <symbol id="icon-idcard" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" rx="3"/><circle cx="17" cy="22" r="4.2"/><path d="M11 32c0-3.6 2.7-6 6-6s6 2.4 6 6"/><path d="M28 18h9M28 24h9M28 30h6"/></symbol>
+    <symbol id="icon-folder" viewBox="0 0 48 48"><path d="M6 14a2 2 0 0 1 2-2h10l3 4h19a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2z"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <a href="#top" class="site-logo">
+      <span class="logo-en">FURIGANA.</span>
+    </a>
+    <nav class="site-nav" aria-label="メインナビゲーション">
+      <a href="#pillars">できること</a>
+      <a href="#works">実績</a>
+      <a href="#service">提供のかたち</a>
+      <a href="#profile">代表について</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta">相談する</a>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="ナビゲーションメニュー" aria-hidden="true">
+  <nav class="mobile-nav" aria-label="モバイルナビゲーション">
+    <ul class="mobile-nav-list">
+      <li><a href="#pillars" class="mobile-nav-link">できること</a></li>
+      <li><a href="#works" class="mobile-nav-link">実績</a></li>
+      <li><a href="#service" class="mobile-nav-link">提供のかたち</a></li>
+      <li><a href="#process" class="mobile-nav-link">進め方</a></li>
+      <li><a href="#profile" class="mobile-nav-link">代表について</a></li>
+      <li><a href="#template" class="mobile-nav-link">テンプレート</a></li>
+      <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
+    </ul>
+    <div class="mobile-nav-cta">
+      <a href="#contact" class="btn btn-primary">相談する</a>
+    </div>
+  </nav>
+</div>
+
+<main id="main-content">
+
+  <!-- 01 HERO -->
+  <section class="hero" id="hero" aria-labelledby="hero-heading">
+    <div class="hero-photo">
+      <!-- 推奨:1200x1600px程度(縦3:4)。自然光の室内、ノートPCと開いたノート、書き込む手元。人物の顔は写らない。彩度低め、暖色寄り -->
+      <img src="assets/img/hero-photo.jpg" alt="自然光の入る室内で、ノートPCと開いたノートに向かい書き込む手元。人物の顔は写っていない。" loading="lazy" width="1536" height="1024">
+      <p class="hero-photo-caption">週1回、話すだけで、判断が記録に変わっていきます</p>
+    </div>
+    <div class="hero-text">
+      <div class="hero-text-inner">
+        <p class="section-label">FURIGANA.</p>
+        <p class="hero-label-sub">AI活用プランナー ／ 小木曽 秀弥</p>
+        <h1 class="hero-heading" id="hero-heading">AIを、<br>現場で回るところまで。</h1>
+        <span class="hero-rule" aria-hidden="true"></span>
+        <p class="hero-subheading">導入して終わりには、しません。</p>
+        <p class="hero-lead hero-lead-short">
+          アパレル販売13年、3店舗のマネージャーとして10年従事。<br>
+          現場で要るものは、自分で作ってきました。
+        </p>
+        <p class="hero-lead hero-lead-full">
+          アパレル販売13年、3店舗のマネージャーとして10年従事。<br>
+          エンジニアではありませんが、現場で要るものは自分で作ってきました。<br>
+          事務作業の時間を減らし、ベテランの判断が残る形をつくり、<br>
+          空いた時間を、売上をつくる時間に変えていく。
+        </p>
+        <div class="hero-cta">
+          <a href="#pillars" class="btn btn-primary">できることを見る</a>
+          <a href="#contact" class="hero-cta-link">相談する →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01b WORKS TEASER -->
+  <section class="works-teaser" aria-label="実際に作ってきたもの(抜粋)">
+    <div class="container works-teaser-inner">
+      <span class="works-teaser-label">実際に作ってきたもの</span>
+      <div class="works-teaser-list">
+        <span class="works-teaser-item"><svg class="icon"><use href="#icon-shift"></use></svg><span>シフト作成ツール</span></span>
+        <span class="works-teaser-item"><svg class="icon"><use href="#icon-database"></use></svg><span>判断基準データベース</span></span>
+        <span class="works-teaser-item"><svg class="icon"><use href="#icon-mail"></use></svg><span>採用返信の自動化</span></span>
+      </div>
+      <a href="#works" class="works-teaser-link">詳しく見る →</a>
+    </div>
+  </section>
+
+  <!-- 02 FOR WHOM -->
+  <section class="section" id="for-whom" aria-labelledby="for-whom-heading">
+    <div class="container">
+      <span class="section-label">For Whom</span>
+      <p class="for-whom-quote">「うちの場合、AIで何ができるのか。」</p>
+      <h2 class="section-heading" id="for-whom-heading">こんな場面に、心当たりはありませんか。</h2>
+
+      <ul class="phenomena-list" role="list">
+        <li>同じ質問に、何度も答えている</li>
+        <li>あの人の休みに合わせて、仕事の予定が決まる</li>
+        <li>マニュアルはあるが、実際には使われていない</li>
+        <li>新しい人が入るたび、教える側の手が止まる</li>
+        <li>「忙しい」が常態化しているが、何をやめるか決められない</li>
+      </ul>
+
+      <p class="structure-lead">これは、業種の話ではありません。判断が、いつも同じところへ戻ってくる。そういう構造の話です。</p>
+
+      <div class="structure-diagram" role="img" aria-label="決裁・例外対応・情シス・人事・総務など、あらゆる業務判断が結局ひとりの担当者に集中して戻ってくる構造を示す図">
+        <svg class="structure-diagram-lines" viewBox="0 0 400 400" aria-hidden="true">
+          <line x1="200" y1="200" x2="200" y2="50"></line>
+          <line x1="200" y1="200" x2="342.7" y2="153.7"></line>
+          <line x1="200" y1="200" x2="288.2" y2="321.3"></line>
+          <line x1="200" y1="200" x2="111.8" y2="321.3"></line>
+          <line x1="200" y1="200" x2="57.3" y2="153.7"></line>
+        </svg>
+        <div class="structure-node structure-node--hub" style="left:50%;top:50%;">
+          <span class="structure-node-icon"><svg class="icon"><use href="#icon-person"></use></svg></span>
+        </div>
+        <div class="structure-node" style="left:50%;top:12.5%;">
+          <span class="structure-node-icon"><svg class="icon"><use href="#icon-doc"></use></svg></span>
+          <span class="structure-node-label">決裁</span>
+        </div>
+        <div class="structure-node" style="left:85.7%;top:38.4%;">
+          <span class="structure-node-icon"><svg class="icon"><use href="#icon-monitor"></use></svg></span>
+          <span class="structure-node-label">情シス</span>
+        </div>
+        <div class="structure-node" style="left:72%;top:80.3%;">
+          <span class="structure-node-icon"><svg class="icon"><use href="#icon-idcard"></use></svg></span>
+          <span class="structure-node-label">人事</span>
+        </div>
+        <div class="structure-node" style="left:28%;top:80.3%;">
+          <span class="structure-node-icon"><svg class="icon"><use href="#icon-folder"></use></svg></span>
+          <span class="structure-node-label">総務</span>
+        </div>
+        <div class="structure-node" style="left:14.3%;top:38.4%;">
+          <span class="structure-node-icon"><svg class="icon"><use href="#icon-alert"></use></svg></span>
+          <span class="structure-node-label">例外対応</span>
+        </div>
+      </div>
+      <p class="structure-diagram-caption">すべて、<strong>特定のひとり</strong>に集中する。</p>
+
+      <div class="structure-note">
+        <p>決裁も、例外対応も、結局その人のところに戻ってくる。情シスも人事も総務も、誰かの兼務でまわっている。</p>
+        <p>FURIGANA.は、この構造を抱えた会社のための相談相手です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02b TEMPLATE TEASER -->
+  <section class="template-teaser" aria-label="無料テンプレートのご案内">
+    <div class="container template-teaser-inner">
+      <p>相談の前に、考え方を試してみたい方へ。無料のテンプレートを配布しています。</p>
+      <a href="#template">テンプレートを見る →</a>
+    </div>
+  </section>
+
+  <!-- 03 PILLARS -->
+  <section class="section section-alt" id="pillars" aria-labelledby="pillars-heading">
+    <div class="container">
+      <span class="section-label">How</span>
+      <h2 class="section-heading" id="pillars-heading">減らして、残して、増やす。</h2>
+      <p class="pillars-lead">
+        この3つは並んでいるわけではありません。まず手を空け、空いた時間で頭の中を書き出し、残った仕組みで新しいことをする。順番があります。
+      </p>
+
+      <div class="pillars-overview" role="img" aria-label="減らす、残す、増やすの3ステップが順番に繋がっている図">
+        <div class="pillars-overview-node">
+          <span class="pillars-overview-icon"><svg class="icon"><use href="#icon-minus-circle"></use></svg></span>
+          <span class="pillars-overview-label">減らす</span>
+        </div>
+        <span class="pillars-overview-connector" aria-hidden="true"><svg class="icon"><use href="#icon-arrow-right"></use></svg></span>
+        <div class="pillars-overview-node">
+          <span class="pillars-overview-icon"><svg class="icon"><use href="#icon-archive"></use></svg></span>
+          <span class="pillars-overview-label">残す</span>
+        </div>
+        <span class="pillars-overview-connector" aria-hidden="true"><svg class="icon"><use href="#icon-arrow-right"></use></svg></span>
+        <div class="pillars-overview-node">
+          <span class="pillars-overview-icon"><svg class="icon"><use href="#icon-trend-up"></use></svg></span>
+          <span class="pillars-overview-label">増やす</span>
+        </div>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar-head">
+          <span class="pillar-num">01</span>
+          <h3 class="pillar-heading">減らす — 事務仕事の時間を、AIで減らす</h3>
+        </div>
+        <p class="pillar-body">シフト調整、報告のとりまとめ、採用応募への一次対応、伝わらないマニュアル。判断の要らない繰り返し作業を洗い出し、AIとツールに任せられる形に組み替えます。</p>
+        <div class="pillar-evidence">
+          <span class="pillar-evidence-label">関連する実績</span>
+          <a class="evidence-chip" href="#work-shift-tool">
+            <span class="evidence-chip-media"><svg class="icon"><use href="#icon-shift"></use></svg></span>
+            <span class="evidence-chip-title">シフト作成ツール</span>
+          </a>
+          <a class="evidence-chip" href="#work-recruit-auto">
+            <span class="evidence-chip-media"><svg class="icon"><use href="#icon-mail"></use></svg></span>
+            <span class="evidence-chip-title">採用応募への返信を半自動化する仕組み</span>
+          </a>
+          <a class="evidence-chip" href="#work-manga-manual">
+            <span class="evidence-chip-media"><svg class="icon"><use href="#icon-book"></use></svg></span>
+            <span class="evidence-chip-title">マニュアルの漫画化</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar-head">
+          <span class="pillar-num">02</span>
+          <h3 class="pillar-heading">残す — ベテランの判断を、会社に残す</h3>
+        </div>
+        <p class="pillar-body">「なぜそう判断したか」は、多くの場合その人の頭の中にしかありません。会話や過去のやり取りから判断基準を拾い上げ、誰でも参照できる形に蓄積し、時にはAIボットとして現場が直接相談できる状態にします。</p>
+        <div class="pillar-evidence">
+          <span class="pillar-evidence-label">関連する実績</span>
+          <a class="evidence-chip" href="#work-decision-db">
+            <span class="evidence-chip-media"><svg class="icon"><use href="#icon-database"></use></svg></span>
+            <span class="evidence-chip-title">判断基準を蓄積するデータベース</span>
+          </a>
+          <a class="evidence-chip" href="#work-ai-bot">
+            <span class="evidence-chip-media"><svg class="icon"><use href="#icon-bot"></use></svg></span>
+            <span class="evidence-chip-title">代表の分身AIボット</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar-head">
+          <span class="pillar-num">03</span>
+          <h3 class="pillar-heading">増やす — 空いた時間を、売上をつくる時間に回す</h3>
+        </div>
+        <p class="pillar-body">「減らす」「残す」は、道具や仕組みの話でした。「増やす」は、その先にある話です。空いた時間を何に使うか決めるところまでを、支援の範囲に含めています。</p>
+        <div class="pillar-outcome">
+          <p class="pillar-outcome-lead">たとえば、こんな時間に。</p>
+          <ul role="list">
+            <li>お客様と向き合う時間</li>
+            <li>新しい提案を考える時間</li>
+            <li>採用や教育に、腰を据えて取り組む時間</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 WORKS RECAP -->
+  <section class="section" id="works" aria-labelledby="works-heading">
+    <div class="container">
+      <span class="section-label">Works</span>
+      <h2 class="section-heading" id="works-heading">実際に作ってきたもの</h2>
+      <div class="works-grid">
+        <article class="work-card" id="work-shift-tool">
+          <div class="work-card-diagram">
+            <div class="flow-diagram" role="img" aria-label="困りごと:調整の連絡が特定の人に集中 から シフト作成ツール を経て 効果:調整の時間を削減 という流れの図">
+              <div class="flow-node flow-node--problem"><span class="flow-node-icon"><svg class="icon"><use href="#icon-clock"></use></svg></span><span class="flow-node-kicker">困りごと</span><span class="flow-node-label">調整の連絡が<br>特定の人に集中</span></div>
+              <span class="flow-connector" aria-hidden="true"><svg class="icon"><use href="#icon-arrow-right"></use></svg></span>
+              <div class="flow-node flow-node--solution"><span class="flow-node-icon"><svg class="icon"><use href="#icon-shift"></use></svg></span><span class="flow-node-kicker">仕組み</span><span class="flow-node-label">シフト作成ツール</span></div>
+              <span class="flow-connector" aria-hidden="true"><svg class="icon"><use href="#icon-arrow-right"></use></svg></span>
+              <div class="flow-node flow-node--result"><span class="flow-node-icon"><svg class="icon"><use href="#icon-check"></use></svg></span><span class="flow-node-kicker">効果</span><span class="flow-node-label">調整の時間を削減</span></div>
+            </div>
+          </div>
+          <div class="work-card-body">
+            <span class="work-card-tag">減らす</span>
+            <p class="work-card-title">シフト作成ツール</p>
+            <p class="work-card-desc"><span class="work-card-label">困りごと</span>シフト作成に毎回時間がかかり、調整の連絡が特定の人に集中していた。</p>
+            <p class="work-card-desc"><span class="work-card-label">解決</span>希望の収集から割り当てまでの流れを自動化し、調整にかかる時間を削減。Googleスプレッドシート連携・実運用中。</p>
+          </div>
+        </article>
+        <article class="work-card" id="work-recruit-auto">
+          <div class="work-card-diagram">
+            <div class="flow-diagram" role="img" aria-label="困りごと:応募への一次対応が後手に回る から 返信の半自動化 を経て 効果:応募者と向き合う時間が増える という流れの図">
+              <div class="flow-node flow-node--problem"><span class="flow-node-icon"><svg class="icon"><use href="#icon-clock"></use></svg></span><span class="flow-node-kicker">困りごと</span><span class="flow-node-label">一次対応が<br>後手に回る</span></div>
+              <span class="flow-connector" aria-hidden="true"><svg class="icon"><use href="#icon-arrow-right"></use></svg></span>
+              <div class="flow-node flow-node--solution"><span class="flow-node-icon"><svg class="icon"><use href="#icon-mail"></use></svg></span><span class="flow-node-kicker">仕組み</span><span class="flow-node-label">返信の半自動化</span></div>
+              <span class="flow-connector" aria-hidden="true"><svg class="icon"><use href="#icon-arrow-right"></use></svg></span>
+              <div class="flow-node flow-node--result"><span class="flow-node-icon"><svg class="icon"><use href="#icon-check"></use></svg></span><span class="flow-node-kicker">効果</span><span class="flow-node-label">応募者と<br>向き合う時間に</span></div>
+            </div>
+          </div>
+          <div class="work-card-body">
+            <span class="work-card-tag">減らす</span>
+            <p class="work-card-title">採用応募への返信を半自動化する仕組み</p>
+            <p class="work-card-desc"><span class="work-card-label">困りごと</span>応募への一次対応に時間がかかり、良い応募者への対応が後手に回っていた。</p>
+            <p class="work-card-desc"><span class="work-card-label">解決</span>定型的な一次対応をAIに任せ、担当者は応募者と向き合う時間に集中できる状態に。</p>
+          </div>
+        </article>
+        <article class="work-card" id="work-manga-manual">
+          <div class="work-card-diagram">
+            <div class="flow-diagram" role="img" aria-label="困りごと:マニュアルが読まれない から マニュアルの漫画化 を経て 効果:現場で自然に読まれる という流れの図">
+              <div class="flow-node flow-node--problem"><span class="flow-node-icon"><svg class="icon"><use href="#icon-clock"></use></svg></span><span class="flow-node-kicker">困りごと</span><span class="flow-node-label">マニュアルが<br>読まれない</span></div>
+              <span class="flow-connector" aria-hidden="true"><svg class="icon"><use href="#icon-arrow-right"></use></svg></span>
+              <div class="flow-node flow-node--solution"><span class="flow-node-icon"><svg class="icon"><use href="#icon-book"></use></svg></span><span class="flow-node-kicker">仕組み</span><span class="flow-node-label">マニュアルの漫画化</span></div>
+              <span class="flow-connector" aria-hidden="true"><svg class="icon"><use href="#icon-arrow-right"></use></svg></span>
+              <div class="flow-node flow-node--result"><span class="flow-node-icon"><svg class="icon"><use href="#icon-check"></use></svg></span><span class="flow-node-kicker">効果</span><span class="flow-node-label">現場で<br>自然に読まれる</span></div>
+            </div>
+          </div>
+          <div class="work-card-body">
+            <span class="work-card-tag">減らす</span>
+            <p class="work-card-title">マニュアルの漫画化</p>
+            <p class="work-card-desc"><span class="work-card-label">困りごと</span>テキストのマニュアルを作っても実際には読まれず、結局同じ説明を繰り返していた。</p>
+            <p class="work-card-desc"><span class="work-card-label">解決</span>マニュアルを漫画形式に変換し、現場で自然に読まれ、使われるものに。</p>
+          </div>
+        </article>
+        <article class="work-card" id="work-decision-db">
+          <div class="work-card-diagram">
+            <div class="flow-diagram" role="img" aria-label="困りごと:判断基準が属人化している から 判断基準データベース を経て 効果:誰でも参照できる という流れの図">
+              <div class="flow-node flow-node--problem"><span class="flow-node-icon"><svg class="icon"><use href="#icon-clock"></use></svg></span><span class="flow-node-kicker">困りごと</span><span class="flow-node-label">判断基準が<br>属人化</span></div>
+              <span class="flow-connector" aria-hidden="true"><svg class="icon"><use href="#icon-arrow-right"></use></svg></span>
+              <div class="flow-node flow-node--solution"><span class="flow-node-icon"><svg class="icon"><use href="#icon-database"></use></svg></span><span class="flow-node-kicker">仕組み</span><span class="flow-node-label">判断基準<br>データベース</span></div>
+              <span class="flow-connector" aria-hidden="true"><svg class="icon"><use href="#icon-arrow-right"></use></svg></span>
+              <div class="flow-node flow-node--result"><span class="flow-node-icon"><svg class="icon"><use href="#icon-check"></use></svg></span><span class="flow-node-kicker">効果</span><span class="flow-node-label">誰でも<br>参照できる</span></div>
+            </div>
+          </div>
+          <div class="work-card-body">
+            <span class="work-card-tag">残す</span>
+            <p class="work-card-title">判断基準を蓄積するデータベース</p>
+            <p class="work-card-desc"><span class="work-card-label">困りごと</span>経営者や店長にしか分からない判断基準があり、その人が不在のとき対応が止まっていた。</p>
+            <p class="work-card-desc"><span class="work-card-label">解決</span>判断の理由を会話ベースで記録・蓄積し、現場が参照できる仕組みを構築。</p>
+          </div>
+        </article>
+        <article class="work-card" id="work-ai-bot">
+          <div class="work-card-diagram">
+            <div class="flow-diagram" role="img" aria-label="困りごと:相談が代表に集中する から 代表の分身AIボット を経て 効果:現場が一次相談できる という流れの図">
+              <div class="flow-node flow-node--problem"><span class="flow-node-icon"><svg class="icon"><use href="#icon-clock"></use></svg></span><span class="flow-node-kicker">困りごと</span><span class="flow-node-label">相談が<br>代表に集中</span></div>
+              <span class="flow-connector" aria-hidden="true"><svg class="icon"><use href="#icon-arrow-right"></use></svg></span>
+              <div class="flow-node flow-node--solution"><span class="flow-node-icon"><svg class="icon"><use href="#icon-bot"></use></svg></span><span class="flow-node-kicker">仕組み</span><span class="flow-node-label">代表の分身AIボット</span></div>
+              <span class="flow-connector" aria-hidden="true"><svg class="icon"><use href="#icon-arrow-right"></use></svg></span>
+              <div class="flow-node flow-node--result"><span class="flow-node-icon"><svg class="icon"><use href="#icon-check"></use></svg></span><span class="flow-node-kicker">効果</span><span class="flow-node-label">現場が<br>一次相談できる</span></div>
+            </div>
+          </div>
+          <div class="work-card-body">
+            <span class="work-card-tag">残す</span>
+            <p class="work-card-title">代表の分身AIボット</p>
+            <p class="work-card-desc"><span class="work-card-label">困りごと</span>判断の相談が代表に集中し、不在時や多忙時に現場の判断が止まっていた。</p>
+            <p class="work-card-desc"><span class="work-card-label">解決</span>蓄積した判断基準データベースを土台に、代表の考え方を再現するAIボットを構築。現場からの一次相談を受けられる状態に。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 SERVICE -->
+  <section class="section section-alt" id="service" aria-labelledby="service-heading">
+    <div class="container">
+      <span class="section-label">Service</span>
+      <h2 class="section-heading" id="service-heading">提供のかたち</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>週次の伴走支援</h3>
+          <p>週1回、話すだけで、判断や手順が記録として残っていきます。頻度や時間はご相談のうえ調整可能です。継続型。</p>
+        </div>
+        <div class="service-card">
+          <h3>AI導入・実装</h3>
+          <p>実際に動くものを作ります。単発の依頼も可能です。</p>
+        </div>
+        <div class="service-card">
+          <h3>ハンズオン研修</h3>
+          <p>社内の方が自分で使えるようになるための、少人数の実践研修。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 PROCESS -->
+  <section class="section" id="process" aria-labelledby="process-heading">
+    <div class="container">
+      <span class="section-label">Process</span>
+      <h2 class="section-heading" id="process-heading">進め方</h2>
+      <ol class="process-list">
+        <li><span class="process-num"><svg class="icon"><use href="#icon-chat"></use></svg></span><div><h3>相談</h3><p>今の状況と、気になっていることを聞かせてください。</p></div></li>
+        <li><span class="process-num"><svg class="icon"><use href="#icon-clipboard"></use></svg></span><div><h3>業務の棚卸し</h3><p>確認・判断・教育にかかっている時間を、一緒に洗い出します。</p></div></li>
+        <li><span class="process-num"><svg class="icon"><use href="#icon-gear"></use></svg></span><div><h3>設計・実装</h3><p>何を減らし、何を残すかを設計し、実際に動く形にします。</p></div></li>
+        <li><span class="process-num"><svg class="icon"><use href="#icon-refresh"></use></svg></span><div><h3>運用と改善</h3><p>使いながら整える。定着まで併走します。</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 07 PROFILE -->
+  <section class="section section-alt" id="profile" aria-labelledby="profile-heading">
+    <div class="container">
+      <span class="section-label">Profile</span>
+      <h2 class="section-heading" id="profile-heading">代表について</h2>
+      <div class="profile-grid">
+        <div class="profile-photo">
+          <img src="assets/img/profile-kogiso.jpg" alt="代表 小木曽秀弥の顔写真" loading="lazy" width="1586" height="992">
+        </div>
+        <div class="profile-text">
+          <p class="profile-name">小木曽 秀弥<span class="profile-name-kana">こぎそ しゅうや</span></p>
+          <p class="profile-role">AI活用プランナー ／ 茨城県龍ケ崎市</p>
+          <p>アパレル販売13年、うち3店舗のマネージャーとして10年、運営管理に従事してきました。エンジニア出身ではありませんが、現場で必要なものを自分で作ってきました。シフト作成ツール、社内連絡の自動化、社内向けQ&amp;Aボットなどを開発し、実際の運用で使っています。</p>
+          <p>専門は、「経営者の言葉」と「現場の言葉」を翻訳すること。屋号のFURIGANA.は、難しい漢字にふりがなを振るように、経営者の頭の中を現場が読める形にする、という意味です。</p>
+          <div class="profile-badge">
+            <img src="assets/img/badge-ai-passport.png" alt="生成AIパスポート取得バッジ" loading="lazy" width="200" height="200" class="profile-badge-img">
+            <span class="profile-badge-label">生成AIパスポート 取得</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07b BRAND STATEMENT -->
+  <section class="section section-statement" aria-label="ブランドステートメント">
+    <div class="container">
+      <p class="statement-text">AIに、ふりがなを振る。</p>
+    </div>
+  </section>
+
+  <!-- 08 TEMPLATE -->
+  <section class="section" id="template" aria-labelledby="template-heading">
+    <div class="container">
+      <span class="section-label">Template</span>
+      <h2 class="section-heading" id="template-heading">まずは、無料のテンプレートから</h2>
+      <a href="https://example.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">テンプレートを見る<!-- 要差し替え:NotionページURL --></a>
+    </div>
+  </section>
+
+  <!-- 09 FAQ -->
+  <section class="section" id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-heading" id="faq-heading">よくある質問</h2>
+      <dl class="faq-list">
+        <div class="faq-item">
+          <dt><button class="faq-question" aria-expanded="false" aria-controls="faq-a1">AIの知識がなくても大丈夫ですか<span class="faq-icon" aria-hidden="true"></span></button></dt>
+          <dd class="faq-answer" id="faq-a1"><p>大丈夫です。専門用語からではなく、実際に困っている場面から一緒に整理します。</p></dd>
+        </div>
+        <div class="faq-item">
+          <dt><button class="faq-question" aria-expanded="false" aria-controls="faq-a2">どのくらいの期間がかかりますか<span class="faq-icon" aria-hidden="true"></span></button></dt>
+          <dd class="faq-answer" id="faq-a2"><p>内容によって異なります。相談の中で見通しをお伝えします。</p></dd>
+        </div>
+        <div class="faq-item">
+          <dt><button class="faq-question" aria-expanded="false" aria-controls="faq-a3">対応エリアはどこですか<span class="faq-icon" aria-hidden="true"></span></button></dt>
+          <dd class="faq-answer" id="faq-a3"><p>【要差し替え:対応エリアの実情】。オンラインでの対応も可能です。</p></dd>
+        </div>
+        <div class="faq-item">
+          <dt><button class="faq-question" aria-expanded="false" aria-controls="faq-a4">情報の取り扱いはどうなっていますか<span class="faq-icon" aria-hidden="true"></span></button></dt>
+          <dd class="faq-answer" id="faq-a4"><p>お預かりする情報の範囲と扱いは、事前にすり合わせます。</p></dd>
+        </div>
+        <div class="faq-item">
+          <dt><button class="faq-question" aria-expanded="false" aria-controls="faq-a5">費用はどのくらいかかりますか<span class="faq-icon" aria-hidden="true"></span></button></dt>
+          <dd class="faq-answer" id="faq-a5"><p>内容によって異なるため、具体的な金額は相談の中でお伝えします。無理に契約を勧めることはしません。</p></dd>
+        </div>
+        <div class="faq-item">
+          <dt><button class="faq-question" aria-expanded="false" aria-controls="faq-a6">このサイトもAIで作ったのですか<span class="faq-icon" aria-hidden="true"></span></button></dt>
+          <dd class="faq-answer" id="faq-a6"><p>はい。構成からコピー、実装まで、AIと一緒に作りました。専門用語からではなく実際に困っている場面から考える、という進め方自体が、日々の支援と同じです。</p></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 10 CONTACT -->
+  <section class="section section-contact" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <span class="section-label section-label--light">Contact</span>
+      <h2 class="section-heading section-heading--light" id="contact-heading">話してみると、外の目で気づくことがあります。</h2>
+      <p class="contact-body">大きな仕組みから始める必要はありません。まずは、今の状況を聞かせてください。</p>
+      <div class="contact-cta">
+        <a href="https://timerex.net/s/example" class="btn btn-on-dark" target="_blank" rel="noopener noreferrer">相談する(TimeRexで予約)<!-- 要差し替え:TimeRex予約ページURL --></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="logo-en footer-logo">FURIGANA.</span>
+    <p class="footer-copy">&copy; 2026 FURIGANA. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
