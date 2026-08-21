@@ -408,19 +408,26 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(27,42,74,0.4); o
 
 /* 減らす→残す→増やす 全体フロー図 */
 .pillars-overview {
-  display: flex; align-items: flex-start; justify-content: center; flex-wrap: wrap;
-  gap: var(--sp-1); margin-bottom: var(--sp-6);
-  padding: var(--sp-4) var(--sp-3); background: var(--c-bg); border: 1px solid var(--c-border); border-radius: var(--radius);
+  display: flex; align-items: flex-start; justify-content: center; flex-wrap: nowrap;
+  gap: 4px; margin-bottom: var(--sp-6);
+  padding: var(--sp-4) var(--sp-2); background: var(--c-bg); border: 1px solid var(--c-border); border-radius: var(--radius);
 }
-.pillars-overview-node { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 92px; }
+.pillars-overview-node { display: flex; flex-direction: column; align-items: center; gap: 10px; flex: 1 1 0; min-width: 0; max-width: 110px; }
 .pillars-overview-icon {
   width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
   background: var(--c-white); border: 1px solid var(--c-border); color: var(--c-navy);
   display: flex; align-items: center; justify-content: center;
 }
 .pillars-overview-icon .icon { width: 26px; height: 26px; }
-.pillars-overview-label { font-family: var(--f-serif); font-size: var(--fs-sm); letter-spacing: 0.06em; color: var(--c-navy); }
-.pillars-overview-connector { width: 24px; height: 16px; color: var(--c-border); flex-shrink: 0; margin-top: 20px; }
+.pillars-overview-label { font-family: var(--f-serif); font-size: var(--fs-sm); letter-spacing: 0.06em; color: var(--c-navy); white-space: nowrap; }
+.pillars-overview-connector { width: 20px; height: 16px; color: var(--c-border); flex-shrink: 0; margin-top: 20px; }
+
+@media (max-width: 380px) {
+  .pillars-overview-icon { width: 44px; height: 44px; }
+  .pillars-overview-icon .icon { width: 20px; height: 20px; }
+  .pillars-overview-label { font-size: var(--fs-xs); }
+  .pillars-overview-connector { width: 14px; margin-top: 14px; }
+}
 
 /* 実績カードの困りごと→仕組み→効果フロー図 */
 .flow-diagram { display: flex; align-items: flex-start; justify-content: center; gap: 6px; width: 100%; }
