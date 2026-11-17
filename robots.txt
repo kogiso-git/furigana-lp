@@ -1,3 +1,2 @@
 User-agent: *
 Allow: /
-Sitemap: https://furigana-lp.pages.dev/sitemap-index.xml
